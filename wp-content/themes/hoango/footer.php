@@ -10,20 +10,15 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
+	</div>
+	<footer id="colophon" class="site-footer wrapper">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hoango' ) ); ?>">
+			Bản quyền 2022 © <a href="<?php echo esc_url(get_bloginfo('url')); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'hoango' ), 'WordPress' );
+				printf( esc_html__( '%s', 'hoango' ), get_bloginfo('name') );
 				?>
 			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'hoango' ), 'hoango', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

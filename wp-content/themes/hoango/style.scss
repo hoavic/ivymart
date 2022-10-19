@@ -15,8 +15,14 @@ Text Domain: hoango
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-
 --------------------------------------------------------------*/
+
+@import 'scss/layout';
+@import 'scss/header';
+@import 'scss/menu';
+
+$link-color: rgb(154, 115, 0);
+$link-active-color: rgb(154, 115, 0.8);
 
 html {
   line-height: 1.15;
@@ -62,20 +68,20 @@ pre {
 }
 a {
   background-color: transparent;
-  color: #4169e1;
+  color: $link-color;
   &:visited {
-    color: #800080;
+    color: $link-active-color;
   }
   &:hover {
-    color: #191970;
+    color: $link-active-color;
     outline: 0;
   }
   &:focus {
-    color: #191970;
+    color: $link-active-color;
     outline: thin dotted;
   }
   &:active {
-    color: #191970;
+    color: $link-active-color;
     outline: 0;
   }
 }
@@ -603,72 +609,7 @@ input[type="color"] {
     color: #111;
   }
 }
-.main-navigation {
-  display: block;
-  width: 100%;
-  ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999;
-      ul {
-        left: -999em;
-        top: 0;
-      }
-      li {
-        &:hover {
-          > ul {
-            display: block;
-            left: auto;
-          }
-        }
-      }
-      li.focus {
-        > ul {
-          display: block;
-          left: auto;
-        }
-      }
-      a {
-        width: 200px;
-      }
-    }
-    li {
-      &:hover {
-        > ul {
-          left: auto;
-        }
-      }
-    }
-    li.focus {
-      > ul {
-        left: auto;
-      }
-    }
-  }
-  li {
-    position: relative;
-  }
-  a {
-    display: block;
-    text-decoration: none;
-  }
-}
-.menu-toggle {
-  display: block;
-}
-.main-navigation.toggled {
-  ul {
-    display: block;
-  }
-}
+
 .site-main {
   .comment-navigation {
     margin: 0 0 1.5em;

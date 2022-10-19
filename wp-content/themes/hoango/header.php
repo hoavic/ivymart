@@ -25,7 +25,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hoango' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header wrapper">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -45,15 +45,22 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<div class="right-header">
+
+
+		</div>
+
+	</header><!-- #masthead -->
+	<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hoango' ); ?></button>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
+					'container_class'	=>	'wrapper' 
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	</nav><!-- #site-navigation -->
+	<div class="wrapper">

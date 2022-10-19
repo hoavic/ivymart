@@ -16,6 +16,7 @@
     "liveSassCompile.settings.excludeList": [ 
         "**/node_modules/**",
         ".vscode/**" ,
-        "wp-admin/**"
+        "wp-admin/**", 
+        "wp-content/themes/hoango/scss/**"
     ]
 }

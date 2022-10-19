@@ -16,8 +16,87 @@ Text Domain: hoango
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-
 --------------------------------------------------------------*/
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.site-title a {
+  text-decoration: none;
+}
+
+.main-navigation {
+  display: block;
+  width: 100%;
+  background-color: gray;
+}
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.main-navigation ul ul li:hover > ul {
+  display: block;
+  left: auto;
+}
+.main-navigation ul ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+.main-navigation ul ul a {
+  width: 200px;
+}
+.main-navigation ul li:hover > ul {
+  left: auto;
+}
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+.main-navigation li {
+  position: relative;
+}
+.main-navigation li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px 12px;
+  white-space: nowrap;
+}
+.main-navigation a:hover {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.main-navigation.toggled ul {
+  display: block;
+}
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -67,21 +146,21 @@ pre {
 
 a {
   background-color: transparent;
-  color: #4169e1;
+  color: rgb(154, 115, 0);
 }
 a:visited {
-  color: #800080;
+  color: rgb(154, 115, 1);
 }
 a:hover {
-  color: #191970;
+  color: rgb(154, 115, 1);
   outline: 0;
 }
 a:focus {
-  color: #191970;
+  color: rgb(154, 115, 1);
   outline: thin dotted;
 }
 a:active {
-  color: #191970;
+  color: rgb(154, 115, 1);
   outline: 0;
 }
 
@@ -681,61 +760,6 @@ input[type=color] {
 }
 input[type=color]:focus {
   color: #111;
-}
-
-.main-navigation {
-  display: block;
-  width: 100%;
-}
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li:hover > ul {
-  display: block;
-  left: auto;
-}
-.main-navigation ul ul li.focus > ul {
-  display: block;
-  left: auto;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul li:hover > ul {
-  left: auto;
-}
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-.main-navigation li {
-  position: relative;
-}
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-
-.menu-toggle {
-  display: block;
-}
-
-.main-navigation.toggled ul {
-  display: block;
 }
 
 .site-main .comment-navigation {
