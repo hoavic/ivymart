@@ -1,0 +1,10 @@
+{
+    "emeraldwalk.runonsave": {
+    "commands": [
+        {
+            "match": "D:\\laragon\\www\\ivymart\\wp-content\\themes\\hoango\\style.scss",
+            "cmd": "sass D:\\laragon\\www\\ivymart\\wp-content\\themes\\hoango\\style.scss D:\\laragon\\www\\ivymart\\wp-content\\themes\\hoango\\style.css"
+        }
+    ]
+}
+}

@@ -1,0 +1,22 @@
+/* 
+* Admin Styles 
+*/
+$logo_url: "img/logo-ivy-square.png";
+
+#customize-controls .customize-info .customize-help-toggle {
+    display: none;
+}
+
+.edit-post-fullscreen-mode-close svg {
+    display: none !important;
+}
+
+/*Replace Logo in Site Editor*/
+a.edit-post-fullscreen-mode-close.components-button {
+    color: transparent ;
+    background-image: url($logo_url) !important;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
