@@ -10,47 +10,7 @@ $menu-item-color: #fff;
     list-style: none;
     margin: 0;
     padding-left: 0;
-    ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999;
-      ul {
-        left: -999em;
-        top: 0;
-      }
-      li {
-        &:hover {
-          > ul {
-            display: block;
-            left: auto;
-          }
-        }
-      }
-      li.focus {
-        > ul {
-          display: block;
-          left: auto;
-        }
-      }
-      a {
-        width: 200px;
-      }
-    }
-    li {
-      &:hover {
-        > ul {
-          left: auto;
-        }
-      }
-    }
-    li.focus {
-      > ul {
-        left: auto;
-      }
-    }
+    background-color: $nav-background;
   }
   li {
     position: relative;
@@ -63,7 +23,8 @@ $menu-item-color: #fff;
     text-decoration: none;
     color: $menu-item-color;
     font-size: 18px;
-    padding: 15px 12px;
+    text-transform: uppercase;
+    padding: 3px 20px;
     white-space: nowrap;
     &:hover {
       color: $menu-item-color;
@@ -72,12 +33,143 @@ $menu-item-color: #fff;
         color: $menu-item-color;
     }
   }
+  .current-menu-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+.action-button {
+  display: flex;
+  justify-content: space-between;
 }
 .menu-toggle {
-  display: block;
+  padding: 2px 10px;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  color: $menu-item-color;
+  border-radius: 0;
+  margin: 0px 10px;
+  display: flex;
+  border: 5px solid $nav-background;
+  background: rgb(255 255 255 / 10%);
+  cursor: pointer;
+
+  &:focus {
+    border-color: $nav-background;
+  }
+  &:hover {
+    border-color: $nav-background;
+  }
+
+  svg {fill:$menu-item-color}
+
 }
+
+.search-toggle {
+  padding: 2px 10px;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  color: $menu-item-color;
+  border-radius: 0;
+  margin: 0px 10px;
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $nav-background;
+  }
+  &:hover {
+    border-color: $nav-background;
+  }
+
+  svg {fill:$menu-item-color}
+
+}
+
 .main-navigation.toggled {
   ul {
     display: block;
+  }
+}
+
+@media only screen and  (min-width: 992px) {
+
+  .menu-toggle,
+  .search-toggle {
+    display: none;
+  }
+  .main-navigation {
+    ul {
+      display: flex;
+    }
+  }
+
+  .main-navigation>.nav-wrap {
+    display: flex;
+  }
+
+  .main-navigation>.nav-wrap>ul>li>a {
+    padding: 15px 20px;
+  }
+
+ .main-navigation ul {
+  ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+    ul {
+      left: -999em;
+      top: 0;
+    }
+    li {
+      &:hover {
+        > ul {
+          display: block;
+          left: auto;
+        }
+      }
+    }
+    li.focus {
+      > ul {
+        display: block;
+        left: auto;
+      }
+    }
+    a {
+      width: 200px;
+    }
+  }
+  li {
+    &:hover {
+      > ul {
+        left: auto;
+      }
+    }
+  }
+  li.focus {
+    > ul {
+      left: auto;
+    }
+  }
+ } 
+ .main-navigation ul ul#product-menu {
+    flex-direction: column;
+    width: 100%;
+    float: none;
+
+    li:hover ul {
+      left: 100%;
+    }
+
+    li.focus ul {
+      left: 100%
+    }
+  
   }
 }

@@ -128,7 +128,7 @@ if ( ! function_exists( 'hoango_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('medium'); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
@@ -136,7 +136,7 @@ if ( ! function_exists( 'hoango_post_thumbnail' ) ) :
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
+						'medium',
 						array(
 							'alt' => the_title_attribute(
 								array(

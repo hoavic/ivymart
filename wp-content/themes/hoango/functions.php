@@ -49,7 +49,8 @@ function hoango_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'hoango' ),
+			'menu-ngang' => esc_html__( 'Menu Ngang', 'hoango' ),
+			'menu-danh-muc' => esc_html__( 'Menu Danh Mục', 'hoango' ),
 		)
 	);
 

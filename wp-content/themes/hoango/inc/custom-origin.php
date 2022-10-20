@@ -12,10 +12,10 @@ function hoango_admin_style() {
 } 
 
 /** Disable Rest API */
-add_filter( 'rest_authentication_errors', 'wp_snippet_disable_rest_api' );
+/* add_filter( 'rest_authentication_errors', 'wp_snippet_disable_rest_api' );
 function wp_snippet_disable_rest_api( $access ) {
    return new WP_Error( 'rest_disabled', __('The WordPress REST API has been disabled.'), array( 'status' => rest_authorization_required_code()));
-}
+} */
 
 /**
  * Remove logo in admin bar
@@ -113,5 +113,8 @@ function hoango_hide_footer_vesion() {
 }
 
 add_action( 'admin_menu', 'hoango_hide_footer_vesion' );
+
+/** Remove Archive in archive page */
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
 ?>
