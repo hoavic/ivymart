@@ -162,6 +162,11 @@ require get_template_directory() . '/inc/custom-origin.php';
 require get_template_directory() . '/inc/custom-login.php';
 
 /**
+ * Custom Woocommerce
+ */
+require get_template_directory() . '/inc/custom-woo.php';
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
