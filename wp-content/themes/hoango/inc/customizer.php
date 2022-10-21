@@ -210,3 +210,10 @@ function social_customize_register($wp_customize) {
 }
 
 add_action('customize_register', 'social_customize_register');
+
+/** Remane Woocommerce to Gian hàng in Customize */
+function my_customize_register($wp_customize) {     
+    $wp_customize->get_panel('woocommerce')->title = __( 'Gian Hàng' );  
+} 
+    
+add_action( 'customize_register', 'my_customize_register', 11);

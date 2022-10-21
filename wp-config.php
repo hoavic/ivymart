@@ -105,8 +105,8 @@ require_once ABSPATH . 'wp-settings.php';
 /** Disable wp update */
 //Disable updating everything for WordPress
 //define( 'DISALLOW_FILE_MODS', true );
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+//define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 /** Disable theme and plugin editor in admin */
 
-define( 'DISALLOW_FILE_EDIT', true );
+//define( 'DISALLOW_FILE_EDIT', true );
