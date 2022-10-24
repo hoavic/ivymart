@@ -74,4 +74,47 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 } */
 
+// Remove the category count for WooCommerce categories
+add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
+
+/**
+ * Set WooCommerce image dimensions upon theme activation
+ */
+// Remove each style one by one
+/* add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
+function jk_dequeue_styles( $enqueue_styles ) {
+	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
+} */
+
+/** Đổi text Add to cart (Thêm vào giỏ hàng) -> Mua ngay */
+add_filter('woocommerce_product_single_add_to_cart_text','QL_customize_add_to_cart_button_woocommerce');
+function QL_customize_add_to_cart_button_woocommerce(){
+return __('Thêm vào giỏ hàng', 'woocommerce');
+}
+
+/* Create Buy Now Button dynamically after Add To Cart button */
+
+function add_content_after_addtocart() {
+
+    $current_product_id = get_the_ID();
+    
+    $product = wc_get_product( $current_product_id );
+    
+    $cart_url = wc_get_cart_url();
+    
+    if( $product->is_type( 'simple' ) ){
+    echo '<a href="'.$cart_url.'?add-to-cart='.$current_product_id.'" class="buy-now button">Mua Ngay</a>';
+    }
+    $options = get_option('hoango_theme_options');
+    echo '<a class="btn_buy callorder" href="tel:'.$options["telephone"].'">
+            <b>Gọi điện đặt hàng</b>
+            <span>'.$options["telephone"].'</span>
+        </a>';
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart' );
+   
+
 ?>

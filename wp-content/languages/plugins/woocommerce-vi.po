@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-10-20 16:27+0700\n"
+"PO-Revision-Date: 2022-10-24 16:48+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: packages/woocommerce-blocks/assets/js/blocks/stock-filter/block.json
 #: packages/woocommerce-blocks/build/stock-filter/block.json
@@ -1211,7 +1211,7 @@ msgstr ""
 #. translators: 1: formatted file size
 #: includes/wc-product-functions.php:295
 msgid "Upload JPEG files that are 1000 x 1000 pixels or larger (max. %1$s)."
-msgstr ""
+msgstr "Tải lên các tệp JPEG có kích thước 1000 x 1000 pixel hoặc lớn hơn (tối đa %1$s)."
 
 #. translators: %d is an order ID.
 #: includes/class-wc-order-factory.php:63
@@ -1514,15 +1514,15 @@ msgstr ""
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:126
 msgid "Check to let customers to purchase only 1 item in a single order. This is particularly useful for items that have limited quantity, for example art or handmade goods."
-msgstr ""
+msgstr "Tích chọn khi chỉ cho phép khách hàng mua 1 mặt hàng / 1 sản loại sản phẩm /  1 đơn đặt hàng. Điều này đặc biệt hữu ích cho các mặt hàng có số lượng hạn chế. Giới hạn số lượng mua trên mỗi khách hàng."
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:122
 msgid "Limit purchases to 1 item per order"
-msgstr ""
+msgstr "Giới hạn số lượng mua ở 1 mặt hàng cho mỗi đơn đặt hàng"
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:38
 msgid "Manage stock level (quantity)"
-msgstr ""
+msgstr "Quản lý mức tồn kho (số lượng)"
 
 #. translators: %s: date
 #: includes/admin/class-wc-admin-webhooks.php:76
@@ -20166,7 +20166,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/views/html-product-data-general.php:70
 msgid "The sale will start at 00:00:00 of \"From\" date and end at 23:59:59 of \"To\" date."
-msgstr ""
+msgstr "Lựa chọn ngày bắt đầu và ngày kết thúc chương trình khuyến mãi"
 
 #. translators: %s: Minimum WordPress version
 #: includes/admin/class-wc-admin-notices.php:462
@@ -42941,7 +42941,7 @@ msgstr "Đọc tiếp"
 #: packages/woocommerce-blocks/build/product-button-frontend.js:3
 #: packages/woocommerce-blocks/build/product-button.js:3
 msgid "Add to cart"
-msgstr "Thêm vào giỏ hàng"
+msgstr "Chọn Mua"
 
 #: includes/gateways/class-wc-payment-gateway-cc.php:62
 msgid "CVC"

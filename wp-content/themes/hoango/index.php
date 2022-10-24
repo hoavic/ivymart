@@ -41,7 +41,7 @@ get_header();
 
 			endwhile;
 			echo '</div>';
-			the_posts_navigation();
+			wp_pagenavi();
 
 		else :
 

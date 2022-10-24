@@ -17,6 +17,10 @@
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( '%s', 'hoango' ), get_bloginfo('name') );
+
+				echo get_option('hoango_theme_options');
+
+				var_dump(get_option('hoango_theme_options'));
 				?>
 			</a>
 		</div><!-- .site-info -->

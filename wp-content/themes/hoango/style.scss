@@ -23,7 +23,7 @@ Text Domain: hoango
 @use 'scss/_body' ;
 @use 'scss/_sidebar' ;
 @use 'scss/_footer' ;
-
+@use 'scss/_woo' ;
 
 $link-color: #956f00;
 $link-active-color: rgb(154, 115, 0.8);
@@ -36,9 +36,7 @@ html {
 body {
   margin: 0;
   color: #404040;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font: 14px/23px Tahoma, Geneva, sans-serif;
   line-height: 1.5;
   background-color: #E9EDF0;
   scroll-behavior: smooth;

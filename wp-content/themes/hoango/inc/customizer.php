@@ -101,7 +101,7 @@ function contact_customize_register($wp_customize){
     $wp_customize->add_setting('hoango_theme_options[telephone]', array(
         'default'        => 'Số điện thoại trống',
         'capability'     => 'edit_theme_options',
-        'type'           => 'option',
+        'type'           => 'them_mod',
 
     ));
 

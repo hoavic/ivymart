@@ -39,6 +39,8 @@ get_header();
 
 			echo '</div>';
 
+			wp_pagenavi();
+
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

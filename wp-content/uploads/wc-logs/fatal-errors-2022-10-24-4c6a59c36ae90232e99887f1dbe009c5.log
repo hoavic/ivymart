@@ -1,0 +1,40 @@
+2022-10-24T09:49:15+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 96
+
+2022-10-24T09:49:15+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 96
+
+2022-10-24T10:11:58+00:00 CRITICAL Uncaught Error: Call to undefined function get_options() in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php:111
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): add_content_after_addtocart('')
+#1 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\laragon\www\ivymart\wp-content\themes\hoango\woocommerce\single-product\add-to-cart\simple.php(51): do_action('woocommerce_aft...')
+#4 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1696): wc_get_template('single-product/...')
+#6 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): woocommerce_simple_add_to_cart('')
+#7 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#8 D:\laragon\ in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 111
+
+2022-10-24T10:12:16+00:00 CRITICAL Uncaught Error: Call to undefined function get_options() in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php:111
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): add_content_after_addtocart('')
+#1 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\laragon\www\ivymart\wp-content\themes\hoango\woocommerce\single-product\add-to-cart\simple.php(51): do_action('woocommerce_aft...')
+#4 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1696): wc_get_template('single-product/...')
+#6 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): woocommerce_simple_add_to_cart('')
+#7 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#8 D:\laragon\ in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 111
+
+2022-10-24T10:13:12+00:00 CRITICAL Uncaught Error: Call to undefined function get_options() in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php:111
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): add_content_after_addtocart('')
+#1 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\laragon\www\ivymart\wp-content\themes\hoango\woocommerce\single-product\add-to-cart\simple.php(51): do_action('woocommerce_aft...')
+#4 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1696): wc_get_template('single-product/...')
+#6 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): woocommerce_simple_add_to_cart('')
+#7 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#8 D:\laragon\ in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 111
+
