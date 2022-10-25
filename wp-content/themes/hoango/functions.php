@@ -166,6 +166,11 @@ require get_template_directory() . '/inc/custom-login.php';
 require get_template_directory() . '/inc/custom-woo.php';
 
 /**
+ * Custom Slider
+ */
+require get_template_directory() . '/inc/custom/custom-slider.php';
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';

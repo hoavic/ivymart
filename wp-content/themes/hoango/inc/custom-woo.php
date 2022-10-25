@@ -1,7 +1,31 @@
 <?php 
 
-add_theme_support( 'woocommerce' );
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
 
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+/** REmove ddddđ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+    echo '<section id="main">';
+}
+
+function my_theme_wrapper_end() {
+    echo '</section>';
+}
+
+/** Remove woo breadcrum*/
+remove_action('woocommerce_before_main_content','woocommerce_breadcrumb',20);
 
 /** Hide Woo suggest */
 add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
@@ -107,12 +131,15 @@ add_action('wp_enqueue_scripts', 'woo_dequeue_unused_css', 330);
 /** Đổi text Add to cart (Thêm vào giỏ hàng) -> Mua ngay */
 add_filter('woocommerce_product_single_add_to_cart_text','QL_customize_add_to_cart_button_woocommerce');
 function QL_customize_add_to_cart_button_woocommerce(){
-return __('Thêm vào giỏ hàng', 'woocommerce');
+    return __('Thêm vào giỏ hàng', 'woocommerce');
 }
+
+/* remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_loop_add_to_cart', 30 ); */
 
 /* Create Buy Now Button dynamically after Add To Cart button */
 
-function add_content_after_addtocart() {
+/* function add_content_after_addtocart() {
 
     $current_product_id = get_the_ID();
     
@@ -129,7 +156,7 @@ function add_content_after_addtocart() {
             <span>'.$options["telephone"].'</span>
         </a>';
 }
-add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart' );
+add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart' ); */
    
 
 ?>

@@ -25,38 +25,39 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hoango' ); ?></a>
 
-	<header id="masthead" class="site-header wrapper">
-		<div class="site-branding">
-			<?php
-			
-			$logo = get_bloginfo( 'name' );
-
-			if ( has_custom_logo() ) {
-				$custom_logo_id = get_theme_mod( 'custom_logo' );
-				$logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-				$logo = '<img src="' . esc_url( $logo_arr[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-			}
-
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></h1>
+	<header id="masthead" class="site-header">
+		<div class="wrapper">
+			<div class="site-branding">
 				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></p>
-				<?php
-			endif;	?>
-		</div><!-- .site-branding -->
+				
+				$logo = get_bloginfo( 'name' );
 
-		<div class="right-header">
-			
-			<div class="widget_shopping_cart_content">
-				<?php woocommerce_mini_cart(); ?>
+				if ( has_custom_logo() ) {
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					$logo = '<img src="' . esc_url( $logo_arr[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+				}
+
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></p>
+					<?php
+				endif;	?>
+			</div><!-- .site-branding -->
+
+			<div class="right-header">
+				
+				<div class="widget_shopping_cart_content">
+					<?php woocommerce_mini_cart(); ?>
+				</div>
+				
+
 			</div>
-			
-
 		</div>
-
 	</header><!-- #masthead -->
 	<nav id="site-navigation" class="main-navigation">
 		<div class="action-button">
@@ -77,7 +78,7 @@
 		<div class="wrapper nav-wrap">
 				
 				<?php
-					echo '<ul><li><a href="#">DANH MỤC SẢN PHẨM</a>';
+					echo '<ul><li class="menu-item"><a href="#"><i class="_mi _before dashicons dashicons-editor-ul" aria-hidden="true"></i> DANH MỤC SẢN PHẨM</a>';
 						wp_nav_menu(
 							array(
 								'theme_location' => 'menu-danh-muc',
@@ -98,8 +99,15 @@
 		</div>
 	</nav><!-- #site-navigation -->
 	<?php 
-		if ( function_exists('yoast_breadcrumb') && !is_home()) {
+/* 		if ( function_exists('yoast_breadcrumb') && !is_home()) {
 			yoast_breadcrumb( '<div class="wrapper"><p id="breadcrumbs">','</p></div>' );
+		} */
+
+		if ( function_exists('woocommerce_breadcrumb') && !is_home()) {
+			echo '<div class="wrapper">';
+			woocommerce_breadcrumb( '', );
+			echo '</div>';
 		}
+		
 	?>
 	<div class="wrapper <?php if(!is_home() && !is_tax('product_cat') && !is_page('cua-hang')) {echo 'has-sidebar';} ?>">

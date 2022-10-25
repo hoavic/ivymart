@@ -1,17 +1,35 @@
 .site-header {
     background-color: #fff;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 .site-title {
     font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
-    padding: 0.67em 0;
+    padding: 5px 0;
     margin: 0;
     a {
         text-decoration: none;
+        display: flex;
 
+        img {
+            height: 50px;
+        }
+    }
+}
+
+@media only screen and (min-width: 628px) {
+    .site-title {
+        padding: 10px 0;
+        a {
+            
+            img {
+                height: 70px;
+            }
+        }
     }
 }
