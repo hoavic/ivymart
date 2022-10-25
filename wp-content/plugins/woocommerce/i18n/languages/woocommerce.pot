@@ -37235,7 +37235,7 @@ msgstr ""
 #: packages/woocommerce-blocks/build/cart.js:21
 #: packages/woocommerce-blocks/build/mini-cart-contents.js:13
 msgid "Remove item"
-msgstr ""
+msgstr "Xóa sản phẩm"
 
 #: templates/cart/cart.php:29
 msgid "Thumbnail image"

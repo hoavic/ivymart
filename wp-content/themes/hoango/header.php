@@ -28,21 +28,24 @@
 	<header id="masthead" class="site-header wrapper">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
+			
+			$logo = get_bloginfo( 'name' );
+
+			if ( has_custom_logo() ) {
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				$logo = '<img src="' . esc_url( $logo_arr[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+			}
+
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $logo; ?></a></p>
 				<?php
-			endif;
-			$hoango_description = get_bloginfo( 'description', 'display' );
-			if ( $hoango_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $hoango_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			endif;	?>
 		</div><!-- .site-branding -->
 
 		<div class="right-header">
@@ -99,4 +102,4 @@
 			yoast_breadcrumb( '<div class="wrapper"><p id="breadcrumbs">','</p></div>' );
 		}
 	?>
-	<div class="wrapper">
+	<div class="wrapper <?php if(!is_home() && !is_tax('product_cat') && !is_page('cua-hang')) {echo 'has-sidebar';} ?>">

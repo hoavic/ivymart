@@ -10,46 +10,78 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main site-boxed">
 
-		<?php if ( have_posts() ) : ?>
+			<header class="woocommerce-products-header">
+				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+				<?php endif; ?>
 
-			<header class="page-header">
 				<?php
-					echo '<h1 class="page-title">'.get_the_archive_title().'</h1>';
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-			
-			<?php
-			/* Start the Loop */
-			echo '<div class="archive-list">';
-			
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				/**
+				 * Hook: woocommerce_archive_description.
+				 *
+				 * @hooked woocommerce_taxonomy_archive_description - 10
+				 * @hooked woocommerce_product_archive_description - 10
 				 */
-				get_template_part( 'template-parts/loop', 'post' );
+				do_action( 'woocommerce_archive_description' );
+				?>
+			</header>
+			<?php
+			if ( woocommerce_product_loop() ) {
 
-			endwhile;
+				/**
+				 * Hook: woocommerce_before_shop_loop.
+				 *
+				 * @hooked woocommerce_output_all_notices - 10
+				 * @hooked woocommerce_result_count - 20
+				 * @hooked woocommerce_catalog_ordering - 30
+				 */
+				do_action( 'woocommerce_before_shop_loop' );
 
-			echo '</div>';
+				woocommerce_product_loop_start();
 
-			//wp_pagenavi();
+				if ( wc_get_loop_prop( 'total' ) ) {
+					while ( have_posts() ) {
+						the_post();
 
-		else :
+						/**
+						 * Hook: woocommerce_shop_loop.
+						 */
+						do_action( 'woocommerce_shop_loop' );
 
-			get_template_part( 'template-parts/content', 'none' );
+						wc_get_template_part( 'content', 'product' );
+					}
+				}
 
-		endif;
+				woocommerce_product_loop_end();
+
+				/**
+				 * Hook: woocommerce_after_shop_loop.
+				 *
+				 * @hooked woocommerce_pagination - 10
+				 */
+				do_action( 'woocommerce_after_shop_loop' );
+			} else {
+				/**
+				 * Hook: woocommerce_no_products_found.
+				 *
+				 * @hooked wc_no_products_found - 10
+				 */
+				do_action( 'woocommerce_no_products_found' );
+			}
+
+			/**
+			 * Hook: woocommerce_after_main_content.
+			 *
+			 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+			 */
+			do_action( 'woocommerce_after_main_content' );
+
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

@@ -11,19 +11,22 @@
 
 ?>
 	</div>
-	<footer id="colophon" class="site-footer wrapper">
-		<div class="site-info">
-			Bản quyền 2022 © <a href="<?php echo esc_url(get_bloginfo('url')); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( '%s', 'hoango' ), get_bloginfo('name') );
+	<footer id="colophon" class="site-footer">
+		<div class="wrapper">
+			<div class="site-info">
+				Bản quyền 2022 © <a href="<?php echo esc_url(get_bloginfo('url')); ?>">
+					<?php
+					/* translators: %s: CMS name, i.e. WordPress. */
+					printf( esc_html__( '%s', 'hoango' ), get_bloginfo('name') );
 
-				echo get_option('hoango_theme_options');
+					echo get_option('hoango_theme_options');
 
-				var_dump(get_option('hoango_theme_options'));
-				?>
-			</a>
-		</div><!-- .site-info -->
+					var_dump(get_option('hoango_theme_options'));
+					?>
+				</a>
+			</div><!-- .site-info -->
+		</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

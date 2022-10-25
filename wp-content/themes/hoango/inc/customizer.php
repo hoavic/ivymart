@@ -211,6 +211,10 @@ function social_customize_register($wp_customize) {
 
 add_action('customize_register', 'social_customize_register');
 
+/** Trang chu Custom */
+
+//require get_template_directory() . '/inc/custom/custom-product-cat-home.php';
+
 /** Remane Woocommerce to Gian hàng in Customize */
 function my_customize_register($wp_customize) {     
     $wp_customize->get_panel('woocommerce')->title = __( 'Gian Hàng' );  

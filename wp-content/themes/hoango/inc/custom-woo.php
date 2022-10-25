@@ -1,5 +1,8 @@
 <?php 
 
+add_theme_support( 'woocommerce' );
+
+
 /** Hide Woo suggest */
 add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
 
@@ -84,10 +87,22 @@ add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 /* add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
 function jk_dequeue_styles( $enqueue_styles ) {
 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
 	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 	return $enqueue_styles;
 } */
+//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+function woo_dequeue_unused_css() {
+
+    wp_dequeue_style('woocommerce-layout');
+    wp_deregister_style('woocommerce-layout');
+    wp_dequeue_style('woocommerce-general');
+    wp_deregister_style('woocommerce-general');
+    wp_dequeue_style('woocommerce-smallscreen');
+    wp_deregister_style('woocommerce-smallscreen');
+
+ }
+add_action('wp_enqueue_scripts', 'woo_dequeue_unused_css', 330);
 
 /** Đổi text Add to cart (Thêm vào giỏ hàng) -> Mua ngay */
 add_filter('woocommerce_product_single_add_to_cart_text','QL_customize_add_to_cart_button_woocommerce');

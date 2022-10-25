@@ -1,8 +1,9 @@
 $footer-bg : #444545;
 $footer-color: #fff;
-
+$main-spacing: 15px;
 
 .site-footer {
     background: $footer-bg;
     color: $footer-color;
+    margin-top: $main-spacing;
 }

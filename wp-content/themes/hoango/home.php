@@ -19,7 +19,7 @@ get_header();
 
 		<?php
 
-        echo '<div class="home-section"><h2>Danh mục sản phẩm</h2>';
+        echo '<div class="home-section box-home"><h2>Danh mục sản phẩm</h2>';
         echo do_shortcode('[product_categories ids="25,26,27,28" columns="8"]');
         echo '</div>';
 
@@ -38,8 +38,8 @@ get_header();
         }
 
         function show_product_in_cat($name, $slug) {
-            $shortcode = '[product_category category="'.$slug.'" columns="5"]';
-            echo '<div class="product-section"><h2>'.$name.'</h2>';
+            $shortcode = '[product_category category="'.$slug.'" columns="5" limit="10"]';
+            echo '<div class="product-section box-home"><h2>'.$name.'</h2>';
             echo do_shortcode($shortcode);
             echo '</div>';
         }
@@ -49,5 +49,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

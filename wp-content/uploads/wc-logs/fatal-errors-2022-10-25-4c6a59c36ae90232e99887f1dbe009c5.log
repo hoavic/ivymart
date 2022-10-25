@@ -1,0 +1,120 @@
+2022-10-25T03:17:57+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:17:57+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:18:22+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:18:22+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:18:49+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:18:49+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:23:21+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:23:21+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:27:26+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
+2022-10-25T03:27:26+00:00 CRITICAL Uncaught Error: Call to a member function add_section() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php:24
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\customizer.php(216): require()
+#1 D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php(187): require('D:\\laragon\\www\\...')
+#2 D:\laragon\www\ivymart\wp-settings.php(566): include('D:\\laragon\\www\\...')
+#3 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#4 D:\laragon\www\ivymart\wp-load.php(50): require_once('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(13): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-product-cat-home.php on line 24
+
