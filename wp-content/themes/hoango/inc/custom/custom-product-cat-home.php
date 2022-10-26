@@ -27,7 +27,7 @@ add_action('customize_register', 'home_customize_register'); */
         'priority' => 120,
     ));
 
-    function rjs_customize_register( $wp_customize ) {
+ /*    function rjs_customize_register( $wp_customize ) {
     
         //Get an array with the category list
     $rjs_categories_full_list = get_categories(array( 'orderby' => 'name', ));
@@ -56,7 +56,7 @@ add_action('customize_register', 'home_customize_register'); */
         'choices' => $rjs_choices_list, //Add the list with options
     ) );
     
-}
+} */
  
 add_action( 'customize_register', 'rjs_customize_register' );
 

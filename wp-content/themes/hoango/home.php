@@ -20,7 +20,7 @@ get_header();
 		<?php
 
         echo '<div class="home-section box-home"><h2>Danh mục sản phẩm</h2>';
-        echo do_shortcode('[product_categories ids="25,26,27,28" columns="8"]');
+        echo do_shortcode('[product_categories ids="25,26,27,28,25,26,27,28" columns="8"]');
         echo '</div>';
 
         // Get Woocommerce product categories WP_Term objects

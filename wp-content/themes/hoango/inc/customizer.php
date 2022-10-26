@@ -99,9 +99,9 @@ function contact_customize_register($wp_customize){
     //  = Số điện thoại               =
     //  =============================
     $wp_customize->add_setting('hoango_theme_options[telephone]', array(
-        'default'        => 'Số điện thoại trống',
+        'default'        => '',
         'capability'     => 'edit_theme_options',
-        'type'           => 'them_mod',
+        'type'           => 'option',
 
     ));
 
@@ -109,6 +109,22 @@ function contact_customize_register($wp_customize){
         'label'      => __('Số điện thoại', 'hoango'),
         'section'    => 'hoango_contact_info',
         'settings'   => 'hoango_theme_options[telephone]',
+    ));
+
+    	//  =============================
+    //  = Hotline               =
+    //  =============================
+    $wp_customize->add_setting('hoango_theme_options[hotline]', array(
+        'default'        => '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+
+    ));
+
+    $wp_customize->add_control('hoango_hotline', array(
+        'label'      => __('Hotline', 'hoango'),
+        'section'    => 'hoango_contact_info',
+        'settings'   => 'hoango_theme_options[hotline]',
     ));
 
 	//  =============================

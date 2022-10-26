@@ -157,6 +157,90 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_loop_add
         </a>';
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart' ); */
-   
+
+/**
+ * Rename product data tabs
+ */
+/* add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+function woo_rename_tabs( $tabs ) {
+
+	return '';
+
+} */
+/**
+ * Remove "Description" Heading Title @ WooCommerce Single Product Tabs
+ */
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
+
+
+/** Chuyen 0 đ thành Lien he */
+function devvn_wc_custom_get_price_html( $price, $product ) {
+    if ( $product->get_price() == 0 ) {
+        if ( $product->is_on_sale() && $product->get_regular_price() ) {
+            $regular_price = wc_get_price_to_display( $product, array( 'qty' => 1, 'price' => $product->get_regular_price() ) );
+ 
+            $price = wc_format_price_range( $regular_price, __( 'Free!', 'woocommerce' ) );
+        } else {
+            $price = '<span class="amount">' . __( 'Liên hệ', 'woocommerce' ) . '</span>';
+        }
+    }
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'devvn_wc_custom_get_price_html', 10, 2 );
+
+
+function woo_cart_but() {
+    ob_start();
+    $cart_count = WC()
+        ->cart->cart_contents_count; // Set variable for cart item count
+    $cart_url = wc_get_cart_url(); // Set Cart URL
+    
+?>
+       <a class="menu-item cart-contents" href="<?php echo $cart_url; ?>" title="Giỏ hàng">
+        <?php
+    if ($cart_count > 0)
+    {
+?>
+            <span class="cart-contents-count"><?php echo $cart_count; ?></span>
+        <?php
+    }
+?>
+        </a>
+        <?php
+    return ob_get_clean();
+}
+
+//Add a filter to get the cart count
+add_filter('woocommerce_add_to_cart_fragments', 'woo_cart_but_count');
+/**
+ * Add AJAX Shortcode when cart contents update
+ */
+function woo_cart_but_count($fragments) {
+    ob_start();
+    $cart_count = WC()
+        ->cart->cart_contents_count;
+    $cart_url = wc_get_cart_url();
+?>
+    <a class="cart-contents menu-item" href="<?php echo $cart_url; ?>" title="<?php _e('View your shopping cart'); ?>">
+    <?php
+    if ($cart_count > 0)
+    {
+?>
+        <span class="cart-contents-count"><?php echo $cart_count; ?></span>
+        <?php
+    }
+?></a>
+    <?php
+    $fragments['a.cart-contents'] = ob_get_clean();
+    return $fragments;
+}
+
+// Alter WooCommerce Checkout Text
+add_filter( 'gettext', function( $translated_text ) {
+    if ( 'Checkout' === $translated_text ) {
+        $translated_text = 'Đặt hàng ngay';
+    }
+    return $translated_text;
+} );
 
 ?>

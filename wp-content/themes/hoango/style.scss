@@ -152,12 +152,14 @@ button {
   font-size: 1rem;
   line-height: 1.5;
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
+  border-color: $link-color;
+  border-radius: 0;
+  background: $link-color;
+  color: #fff;
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  padding: 8px 10px;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
   &::-moz-focus-inner {
     border-style: none;
     padding: 0;
@@ -166,13 +168,15 @@ button {
     outline: 1px dotted ButtonText;
   }
   &:hover {
-    border-color: #ccc #bbb #aaa;
+    border-color: $link-color;
+    box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / 20%);
+    color: #fff;
   }
   &:active {
-    border-color: #aaa #bbb #bbb;
+    border-color: $link-color;
   }
   &:focus {
-    border-color: #aaa #bbb #bbb;
+    border-color: $link-color;
   }
 }
 input {
@@ -426,11 +430,16 @@ figure {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 5px 8px;
 }
 input[type="button"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border-color: #ddd;
+  border-radius: 0;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
@@ -447,8 +456,8 @@ input[type="button"] {
 }
 input[type="reset"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border-color:#ddd;
+  border-radius: 0;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
@@ -465,14 +474,15 @@ input[type="reset"] {
 }
 input[type="submit"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border-color: #ddd;
+  border-radius: 0;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
   padding: 0.6em 1em 0.4em;
   &:hover {
     border-color: #ccc #bbb #aaa;
+    box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / 30%);
   }
   &:active {
     border-color: #aaa #bbb #bbb;
@@ -483,8 +493,8 @@ input[type="submit"] {
 }
 input[type="text"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -492,8 +502,8 @@ input[type="text"] {
 }
 input[type="email"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -501,8 +511,8 @@ input[type="email"] {
 }
 input[type="url"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -510,8 +520,8 @@ input[type="url"] {
 }
 input[type="password"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -519,8 +529,8 @@ input[type="password"] {
 }
 input[type="search"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -528,8 +538,8 @@ input[type="search"] {
 }
 input[type="number"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -537,8 +547,8 @@ input[type="number"] {
 }
 input[type="tel"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -546,8 +556,8 @@ input[type="tel"] {
 }
 input[type="range"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -555,8 +565,8 @@ input[type="range"] {
 }
 input[type="date"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -564,8 +574,8 @@ input[type="date"] {
 }
 input[type="month"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -573,8 +583,8 @@ input[type="month"] {
 }
 input[type="week"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;
@@ -582,8 +592,8 @@ input[type="week"] {
 }
 input[type="time"] {
   color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  border-radius: 0;
   padding: 3px;
   &:focus {
     color: #111;

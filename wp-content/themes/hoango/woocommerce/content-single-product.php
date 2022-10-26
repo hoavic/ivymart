@@ -32,60 +32,69 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
-	<div class="product-top">
-		<?php woocommerce_template_single_title(); ?>
 	
-		<div class="product-quick-info">
+	<div class="product-quick-info">
+		<?php
+		/**
+		 * Hook: woocommerce_before_single_product_summary.
+		 *
+		 * @hooked woocommerce_show_product_sale_flash - 10
+		 * @hooked woocommerce_show_product_images - 20
+		 */
+		do_action( 'woocommerce_before_single_product_summary' );
+		?>
+
+		<div class="summary entry-summary">
 			<?php
 			/**
-			 * Hook: woocommerce_before_single_product_summary.
+			 * Hook: woocommerce_single_product_summary.
 			 *
-			 * @hooked woocommerce_show_product_sale_flash - 10
-			 * @hooked woocommerce_show_product_images - 20
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked WC_Structured_Data::generate_product_data() - 60
 			 */
-			do_action( 'woocommerce_before_single_product_summary' );
-			?>
-
-			<div class="summary entry-summary">
-				<?php
-				/**
-				 * Hook: woocommerce_single_product_summary.
-				 *
-				 * @hooked woocommerce_template_single_title - 5
-				 * @hooked woocommerce_template_single_rating - 10
-				 * @hooked woocommerce_template_single_price - 10
-				 * @hooked woocommerce_template_single_excerpt - 20
-				 * @hooked woocommerce_template_single_add_to_cart - 30
-				 * @hooked woocommerce_template_single_meta - 40
-				 * @hooked woocommerce_template_single_sharing - 50
-				 * @hooked WC_Structured_Data::generate_product_data() - 60
-				 */
-				//do_action( 'woocommerce_single_product_summary' );
-				woocommerce_template_single_price();
+			//do_action( 'woocommerce_single_product_summary' );
+			woocommerce_template_single_title();
+			woocommerce_template_single_price();
+			if ( ! has_excerpt() ) {
+				echo '<div class="woocommerce-product-details__short-description">
+						<ul>
+							<li>Nội dung phần mô tả ngắn 1</li>
+							<li>Nội dung phần mô tả ngắn 2</li>
+							<li>Nội dung phần mô tả ngắn 3</li>
+						</ul>
+					</div>';
+			} else {
 				woocommerce_template_single_excerpt();
-				woocommerce_template_single_add_to_cart();
-				//woocommerce_template_loop_add_to_cart();
-				//woocommerce_template_single_meta();
-				$current_product_id = get_the_ID();
-    
-				$product = wc_get_product( $current_product_id );
-				
-				$cart_url = wc_get_cart_url();
-				echo '<p class="action buttons">';
-				if( $product->is_type( 'simple' ) ){
-				echo '<a href="'.$cart_url.'?add-to-cart='.$current_product_id.'" class="buy-now button">
-						<b>Mua Ngay</b>
-						<span>Giao hàng thu tiền tận nơi toàn quốc</span>
-					</a>';
-				}
-				$options = get_option('hoango_theme_options');
-				echo '<a class="buy-now callorder" href="tel:'.$options["telephone"].'">
-						<b>Gọi điện đặt hàng</b>
-						<span>'.$options["telephone"].'</span>
-					</a>';
-				echo '</p>';	
-				?>
-			</div>
+			}
+			
+			woocommerce_template_single_add_to_cart();
+			//woocommerce_template_loop_add_to_cart();
+			$current_product_id = get_the_ID();
+
+			$product = wc_get_product( $current_product_id );
+			
+			$cart_url = wc_get_cart_url();
+			echo '<p class="action buttons">';
+			if( $product->is_type( 'simple' ) ){
+			echo '<a href="'.$cart_url.'?add-to-cart='.$current_product_id.'" class="buy-now button">
+					<b>Mua Ngay</b>
+					<span>Giao hàng thu tiền tận nơi toàn quốc</span>
+				</a>';
+			}
+			$options = get_option('hoango_theme_options');
+			echo '<a class="buy-now callorder" href="tel:'.$options["telephone"].'">
+					<b>Gọi điện đặt hàng</b>
+					<span>'.$options["telephone"].'</span>
+				</a>';
+			echo '</p>';
+			woocommerce_template_single_meta();	
+			?>
 		</div>
 	</div>
 	<?php

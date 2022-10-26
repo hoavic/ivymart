@@ -21,7 +21,103 @@
         }
     }
 }
+.right-header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 20px;
+}
 
+.widget_search {
+    display: none;
+        .searchform {
+        display: flex;
+        position: relative;
+        input {
+            background: #f6f6f6;
+            border: 1px solid #c2c2c2;
+            color: #666;
+            display: block;
+            float: left;
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            padding: 10px;
+            width: 350px;
+            box-sizing: border-box;
+            border-radius: 0;
+            transition: 200ms ease-in-out;
+
+            &:focus {
+                outline: none;
+                border-radius: 0;
+                border-color: #956f00;
+            }
+        }
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            text-align: center;
+            background: none;
+            border: none;
+            color: #999;
+            padding: 10px;
+        }
+    }
+}
+
+.widget_hotline {
+    display: flex;
+
+
+    .dashicons {
+        font-size: 50px;
+        color: orange;
+        display: block;
+        width: 55px;
+        margin-top: 2px;
+        height: 50px;
+        transform: scaleX(-1);
+    }
+    .callme {
+        display: none;
+    }
+
+}
+.home-slider {
+    margin: 10px 0 10px;
+
+    .swiper-button-prev, .swiper-rtl .swiper-button-next,
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        color: rgb(255 255 255 / 75%);
+        transition: 300ms ease-in-out;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        transform: translateX(-60px);
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        transform: translateX(60px);
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #956f00;
+    }
+
+    img {
+        display: flex;
+    }
+}
+
+.home-slider:hover {
+    .swiper-button-prev, .swiper-rtl .swiper-button-next,
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        transform: translateX(0);
+    }
+    
+}
 @media only screen and (min-width: 628px) {
     .site-title {
         padding: 10px 0;
@@ -31,5 +127,37 @@
                 height: 70px;
             }
         }
+    }
+
+
+    .widget_hotline {
+
+        .callme {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            p {
+                
+                margin: 0;
+                white-space: nowrap;
+                a {
+                    color: #555;
+                    span {
+                        font-size: 1.286em;
+                        &.hotline {
+                            color: #ff0000;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .widget_search {
+        display: block;
     }
 }

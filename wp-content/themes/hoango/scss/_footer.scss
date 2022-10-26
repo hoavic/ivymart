@@ -1,9 +1,107 @@
-$footer-bg : #444545;
-$footer-color: #fff;
+$footer-bg : #183544;
+$footer-color: #bfbfbf;
+$footer-heading-color: #fff;
 $main-spacing: 15px;
 
 .site-footer {
     background: $footer-bg;
     color: $footer-color;
     margin-top: $main-spacing;
+}
+
+.site-info {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 16px;
+    margin: 0 0 9px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+
+    span {
+        display: block;
+        &.hotline {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 10px;
+            margin-left: 8px;
+        }
+    }
+
+    .social-footer {
+        a {
+
+            span {
+                background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                border: 1px solid #999;
+                border-radius: 50%;
+                color: #999;
+                display: inline-block;
+                font-size: 25px;
+                height: 46px;
+                line-height: 44px;
+                transition: all 0.2s ease-in-out 0s;
+                vertical-align: top;
+                width: 46px;
+            }
+        }
+    }
+}
+
+.sidebar-footer {
+    color: $footer-color;
+    padding: 10px;
+    a {
+        color: $footer-color;
+
+        &:visited {
+            color: $footer-color;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    h2, h3 {
+        color: $footer-heading-color;
+        font-size: 16px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 1px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 628px) {
+    .site-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        span {
+            display: inline-block;
+        }
+    }
+    .sidebar-footer {
+        display: flex;
+        justify-content: space-between;
+        .widget {
+            background:none;
+            padding: 0;
+            margin: 0;
+            h2, h3 {
+                border: none;
+                font-size: 14px;
+                padding: 0;
+                text-align: left;
+            }
+        }
+    }
 }

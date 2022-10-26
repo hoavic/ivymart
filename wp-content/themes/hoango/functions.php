@@ -131,6 +131,18 @@ function hoango_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar Footer', 'hoango' ),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__( 'Thêm Widget ở đây.', 'hoango' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'hoango_widgets_init' );
 
@@ -168,7 +180,7 @@ require get_template_directory() . '/inc/custom-woo.php';
 /**
  * Custom Slider
  */
-require get_template_directory() . '/inc/custom/custom-slider.php';
+//require get_template_directory() . '/inc/custom/custom-slider.php';
 
 /**
  * Implement the Custom Header feature.

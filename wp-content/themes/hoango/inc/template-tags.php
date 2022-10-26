@@ -174,3 +174,4 @@ if ( ! function_exists( 'show_contact_info' ) ) :
 		echo '<p>Thon tin lien he.</p>';
 	}
 endif;
+
