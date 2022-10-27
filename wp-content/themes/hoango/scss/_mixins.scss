@@ -1,0 +1,30 @@
+$main-spacing: 15px;
+$main-color: #956f00;
+
+$color-price: #ff0000;
+
+@mixin justify-item($align: center) {
+    justify-content: $align;
+}
+
+@mixin flex-default {
+    display: flex;
+}
+
+@mixin flex-column {
+    @include flex-default;
+    flex-direction: column;
+}
+
+@mixin woo-transition {
+    transition: 200ms ease-in-out;
+}
+
+@mixin button_inset($opacity: 0.15) {
+    box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / $opacity);
+}
+
+@mixin box-sizing($value: border-box) {
+    box-sizing: $value;
+}
+

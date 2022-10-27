@@ -1,0 +1,15 @@
+2022-10-27T04:09:04+00:00 CRITICAL require(): Failed opening required 'D:\laragon\www\ivymart/wp-content/themes/hoango/inc/custom/custom-slider.php' (include_path='.;D:/laragon/etc/php/pear') in D:\laragon\www\ivymart\wp-content\themes\hoango\functions.php on line 183
+
+2022-10-27T05:01:14+00:00 CRITICAL Uncaught Error: Using $this when not in object context in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-slider.php:25
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): slider_customize_register(Object(WP_Customize_Manager))
+#1 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\laragon\www\ivymart\wp-includes\class-wp-customize-manager.php(933): do_action('customize_regis...', Object(WP_Customize_Manager))
+#4 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): WP_Customize_Manager->wp_loaded('')
+#5 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#7 D:\laragon\www\ivymart\wp-settings.php(620): do_action('wp_loaded')
+#8 D:\laragon\www\ivymart\wp-config.php(103): require_once('D:\\laragon\\www\\...')
+#9 D:\l in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom\custom-slider.php on line 25
+

@@ -108,6 +108,7 @@ if ( post_password_required() ) {
 	//do_action( 'woocommerce_after_single_product_summary' );
 	woocommerce_output_related_products();
 	woocommerce_output_product_data_tabs();
+	echo '<section class="related products"><h2>Sản phẩm khác</h2>'.do_shortcode('[recent_products limit="8"]').'</section>';
 	?>
 </div>
 

@@ -18,5 +18,32 @@
         ".vscode/**" ,
         "wp-admin/**", 
         "wp-content/themes/hoango/scss/**"
+    ],
+    "autoprefixer.options": {
+		"browsers": [
+			"last 4 versions",
+			"ie >= 9",
+			"> 5%"
+		]
+    },
+    "cSpell.ignoreWords": [
+        "Giỏ",
+        "aligncenter",
+        "alignleft",
+        "alignright",
+        "bypostauthor",
+        "callme",
+        "callorder",
+        "dashicons",
+        "datetime",
+        "hàng",
+        "hoango",
+        "ivymart",
+        "neverending",
+        "onsale",
+        "searchform",
+        "swiper",
+        "tabindex",
+        "woocommerce"
     ]
 }

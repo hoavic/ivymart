@@ -146,19 +146,39 @@
 		}
 
 		if (is_home()) {
+
+			function slider_item($key, $stt) {
+
+				$id = get_theme_mod($key);
+
+				if (empty($id) || $id == 0 || $id == '') {return ;}
+
+				echo '<div class="swiper-slide slide_'.$stt.'">';
+
+				echo wp_get_attachment_image($id, 'full', '', array('alt' => 'Banner '));
+
+				echo '</div>';
+
+			}
+
 			echo '<div class="wrapper">
 					<div class="home-slider swiper mySwiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide slide_1">
-								<img src="wp-content/themes/hoango/img/bn-vichy.jpg" alt="Banner 1">
-							</div>
-							<div class="swiper-slide slide_2">
-								<img src="wp-content/themes/hoango/img/bn1.jpg" alt="Banner 2">
-							</div>
-							<div class="swiper-slide slide_3">
-								<img src="wp-content/themes/hoango/img/bn-la-roche-cam.jpg" alt="Banner 3">
-							</div>
-						</div>
+						<div class="swiper-wrapper">';
+/* 			echo '<div class="swiper-slide slide_1">
+						<img src="wp-content/themes/hoango/img/bn-vichy.jpg" alt="Banner 1">
+					</div>
+					<div class="swiper-slide slide_2">
+						<img src="wp-content/themes/hoango/img/bn1.jpg" alt="Banner 2">
+					</div>
+					<div class="swiper-slide slide_3">
+						<img src="wp-content/themes/hoango/img/bn-la-roche-cam.jpg" alt="Banner 3">
+					</div>'; */
+						slider_item('slider_1', 1);
+						slider_item('slider_2', 2);
+						slider_item('slider_3', 3);
+						slider_item('slider_4', 4);
+
+					echo 	'</div>
 						<div class="swiper-pagination"></div>
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
@@ -187,4 +207,4 @@
 		}
 		
 	?>
-	<div class="wrapper <?php if(!is_home() && !is_tax('product_cat') && !is_page('cua-hang')) {echo 'has-sidebar';} ?>">
+	<div class="wrapper <?php if(!is_home() && !is_tax('product_cat') && !is_page('cua-hang') && !is_page('cart') && !is_page('sale')) {echo 'has-sidebar';} ?>">

@@ -1,4 +1,6 @@
-$nav-background: #956f00;
+@use 'mixins' as m;
+
+$nav-background: m.$main-color;
 $menu-item-color: #fff;
 
 .main-navigation {
@@ -52,6 +54,7 @@ $menu-item-color: #fff;
   border: 5px solid $nav-background;
   background: rgb(255 255 255 / 10%);
   cursor: pointer;
+  height: 45px;
 
   &:focus {
     border-color: $nav-background;
@@ -101,6 +104,8 @@ $menu-item-color: #fff;
     display: none;
   }
   .main-navigation {
+    -webkit-box-shadow: 0 4px 6px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 4px 6px 0 rgb(0 0 0 / 10%);
     ul {
       display: flex;
     }

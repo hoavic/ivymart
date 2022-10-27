@@ -25,7 +25,6 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    gap: 20px;
 }
 
 .widget_search {
@@ -129,7 +128,7 @@
         }
     }
 
-
+    .right-header {    gap: 20px;}
     .widget_hotline {
 
         .callme {

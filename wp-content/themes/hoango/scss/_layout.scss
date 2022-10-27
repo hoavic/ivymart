@@ -21,30 +21,36 @@ $main-spacing: 15px;
     padding: 0 $main-spacing;
     margin: 10px 0;
 }
+.archive-list {
 
-.archive-list>article {
-    display: grid;
-    grid-template-columns: 32% auto; 
-    border-bottom: 1px solid #eee;
-    padding: $main-spacing 0;
-    margin: 0;
-
-    .info-right {
-
-        margin-left: $main-spacing;
-
-        .entry-header>.entry-title {
-            margin: 0 0 $main-spacing 0;
-            font-size: 20px;
-
-            a {color: #333;}
-        }
+    > article {
+        display: grid;
+        grid-template-columns: 32% auto; 
+        border-bottom: 1px solid #eee;
+        padding: $main-spacing 0;
+        margin: 0;
     
-        .entry-summary>p {
-            display: none;
+        .info-right {
+    
+            margin-left: $main-spacing;
+    
+            .entry-header>.entry-title {
+                margin: 0 0 $main-spacing 0;
+                font-size: 20px;
+    
+                a {color: #333;}
+            }
+        
+            .entry-summary>p {
+                display: none;
+            }
         }
     }
-}
+    
+    img {
+        max-height: 190px;
+    }
+} 
 
 .post-thumbnail.blank-thumbnail {
     width: 100%;
