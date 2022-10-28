@@ -96,4 +96,14 @@
 			menuItem.classList.toggle( 'focus' );
 		}
 	}
+
+
+	const sBtn = document.getElementById( 'sBtn' );
+	const msearch = document.getElementById( 'msearch' );
+
+	sBtn.addEventListener( 'click', function() {
+		msearch.classList.toggle( 'toggled' );
+
+	} );
+
 }() );

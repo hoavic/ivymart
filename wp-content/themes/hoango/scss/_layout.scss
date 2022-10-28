@@ -1,4 +1,4 @@
-$main-spacing: 15px;
+@use 'mixins' as m;
 
 .wrapper {
     max-width: 1200px;
@@ -18,24 +18,56 @@ $main-spacing: 15px;
 .widget-area {display: none;}
 
 #breadcrumbs {
-    padding: 0 $main-spacing;
+    padding: 0 m.$main-spacing;
     margin: 10px 0;
 }
+
+.search-form {
+    display: flex;
+    margin: 15px 0;
+}
+
+.mobile_search {
+    padding: 0;
+    transition: 300ms ease-in-out;
+    transform: scaleY(0);
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+
+    &.toggled {
+        padding: 15px;
+        transform: scaleY(1);
+        visibility: visible;
+        max-height: 67px;
+        opacity: 1;
+    }
+
+    .searchform {
+        display: flex;
+        input {
+            width: 100%;
+        }
+    }
+}
+
+
+
 .archive-list {
 
     > article {
         display: grid;
         grid-template-columns: 32% auto; 
         border-bottom: 1px solid #eee;
-        padding: $main-spacing 0;
+        padding: m.$main-spacing 0;
         margin: 0;
     
         .info-right {
     
-            margin-left: $main-spacing;
+            margin-left: m.$main-spacing;
     
             .entry-header>.entry-title {
-                margin: 0 0 $main-spacing 0;
+                margin: 0 0 m.$main-spacing 0;
                 font-size: 20px;
     
                 a {color: #333;}
@@ -59,6 +91,65 @@ $main-spacing: 15px;
     background: #eee;
 }
 
+.wp-pagenavi {
+    text-align: right;
+    padding: 20px 0;
+    @include m.flex-default;
+    @include m.justify-item(right);
+    list-style: none;
+
+    .pages {
+        display: none;
+    }
+
+    span, a {
+        background-color: #fff;
+        border: 1px solid #ebebeb;
+        color: #656e7d;
+        font-weight: bold;
+        line-height: 1.2em;
+        padding: 8px 12px;
+        text-decoration: none;
+        @include m.woo-transition;
+        margin: 0;
+
+        &.current {
+            background-color: m.$main-color;
+            color: #fff;
+        }
+    }
+     
+}
+.related-title {
+    border-bottom: 1px solid #e1e1e1;
+    display: inline-block;
+    line-height: 23px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    position: relative;
+    width: 100%;
+
+    h2 {
+
+        color: #2196f3;
+        font-size: 1.375em;
+        float: left;
+        font-weight: normal;
+        margin-bottom: 0;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+            background-color: #e94c6f;
+            bottom: -7px;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
 @media only screen and (min-width: 628px) {
     .archive-list>article {
         .info-right {
@@ -83,7 +174,7 @@ $main-spacing: 15px;
         display: grid;
         grid-template-columns: 1fr 284px;
     }
-    .widget-area {display: block; background: #fff; margin-left: $main-spacing;}
+    .widget-area {display: block; background: #fff; margin-left: m.$main-spacing;}
 
     .widget {
         background-color: #fff;

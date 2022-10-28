@@ -20,8 +20,8 @@ $color-price: #ff0000;
     transition: 200ms ease-in-out;
 }
 
-@mixin button_inset($opacity: 0.15) {
-    box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / $opacity);
+@mixin button_inset {
+    box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / 15%)
 }
 
 @mixin box-sizing($value: border-box) {

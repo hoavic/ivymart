@@ -46,5 +46,40 @@
 
 	<footer class="entry-footer">
 		<?php hoango_entry_footer(); ?>
+
+		<?php 
+		
+			$categories = get_the_category();
+			if ( ! empty( $categories ) ) {
+				//var_dump($categories);
+				echo '<div class="related_posts archive-list"><div class="related-title"><h2>Bài viết liên quan</h2></div>';
+
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => '5',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'category',
+							'field'    => 'term_id',
+							'terms'    => $categories[0]->term_id,
+							),
+						),
+					);
+
+				$query = new WP_Query($args);
+				
+				if ( $query->have_posts() ) {
+					while($query -> have_posts()) {
+						$query -> the_post();
+						get_template_part( 'template-parts/loop', 'post' );
+					}
+				}
+
+				wp_reset_query() ; 
+
+				echo '</div>';
+			}
+		
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

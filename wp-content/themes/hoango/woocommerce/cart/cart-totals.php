@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<h2><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>
 
-	<table cellspacing="0" class="shop_table shop_table_responsive">
+	<table cellspacing="0" class="shop_table shop_table_responsive shop_custom_table">
 
 		<tr class="cart-subtotal">
 			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
@@ -98,6 +98,8 @@ defined( 'ABSPATH' ) || exit;
 			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
+
+		<tr ><th class="note">(Đã bao gồm VAT)</th></tr>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 

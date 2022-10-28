@@ -1,0 +1,24 @@
+2022-10-28T04:39:20+00:00 CRITICAL Uncaught Error: Call to a member function get_type() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php:146
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(309): woocustomizer_edit_shop_button_text('Cho\xCC\xA3n Mua')
+#1 D:\laragon\www\ivymart\wp-includes\plugin.php(191): WP_Hook->apply_filters('Cho\xCC\xA3n Mua', Array)
+#2 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\class-wc-product-simple.php(62): apply_filters('woocommerce_pro...', 'Cho\xCC\xA3n Mua', Object(WC_Product_Simple))
+#3 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Schemas\V1\ProductSchema.php(477): WC_Product_Simple->add_to_cart_text()
+#4 [internal function]: Automattic\WooCommerce\StoreApi\Schemas\V1\ProductSchema->get_item_response(Object(WC_Product_Simple))
+#5 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\BlockTypes\AbstractProductGrid.php(114): array_map(Array, Array)
+#6 D:\laragon\www\i in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 146
+
+2022-10-28T04:40:48+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 163
+
+2022-10-28T04:40:48+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 163
+
+2022-10-28T04:41:09+00:00 CRITICAL Uncaught Error: Call to a member function get_type() on null in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php:146
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(309): woocustomizer_edit_shop_button_text('Cho\xCC\xA3n Mua')
+#1 D:\laragon\www\ivymart\wp-includes\plugin.php(191): WP_Hook->apply_filters('Cho\xCC\xA3n Mua', Array)
+#2 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\includes\class-wc-product-simple.php(62): apply_filters('woocommerce_pro...', 'Cho\xCC\xA3n Mua', Object(WC_Product_Simple))
+#3 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Schemas\V1\ProductSchema.php(477): WC_Product_Simple->add_to_cart_text()
+#4 [internal function]: Automattic\WooCommerce\StoreApi\Schemas\V1\ProductSchema->get_item_response(Object(WC_Product_Simple))
+#5 D:\laragon\www\ivymart\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\BlockTypes\AbstractProductGrid.php(114): array_map(Array, Array)
+#6 D:\laragon\www\i in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 146
+

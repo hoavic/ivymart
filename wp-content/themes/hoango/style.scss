@@ -479,7 +479,7 @@ input[type="submit"] {
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  padding: 5px 10px;
   &:hover {
     border-color: #ccc #bbb #aaa;
     box-shadow: inset 0px 0px 60px 15px rgb(0 0 0 / 30%);
@@ -495,7 +495,7 @@ input[type="text"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -504,7 +504,7 @@ input[type="email"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -513,7 +513,7 @@ input[type="url"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -522,7 +522,7 @@ input[type="password"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -531,7 +531,7 @@ input[type="search"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -549,7 +549,7 @@ input[type="tel"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }
@@ -558,7 +558,7 @@ input[type="range"] {
   color: #666;
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 3px;
+  padding: 5px 10px;
   &:focus {
     color: #111;
   }

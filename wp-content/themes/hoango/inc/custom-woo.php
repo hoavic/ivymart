@@ -17,7 +17,12 @@ add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
 function my_theme_wrapper_start() {
-    echo '<section id="main">';
+    if (is_single()) {
+        echo '<section id="main" class="site-main">';
+    } else {
+        echo '<section id="main" class="site-main site-boxed">';
+    }
+    
 }
 
 function my_theme_wrapper_end() {
@@ -134,6 +139,29 @@ function QL_customize_add_to_cart_button_woocommerce(){
     return __('Thêm vào giỏ hàng', 'woocommerce');
 }
 
+// Change button text on WooCommerce Shop pages
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocustomizer_edit_shop_button_text' );
+function woocustomizer_edit_shop_button_text() {
+    return __( 'Chọn Mua', 'woocommerce' );
+/*     global $product;
+    $product_type = $product->get_type(); // Get the Product Type
+	
+    // Change text depending on Product type
+    switch ( $product_type ) {
+        case "variable":
+            return __( 'Chọn Mua', 'woocommerce' );
+            break;
+        case "grouped":
+            return __( 'Chọn Mua', 'woocommerce' );
+            break;
+        case "external":
+            // Button label is added when editing the product
+            return esc_html( $product->get_button_text() );
+            break;
+        default:
+            return __( 'Chọn Mua', 'woocommerce' );
+    } */
+}
 /* remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_loop_add_to_cart', 30 ); */
 
@@ -235,12 +263,36 @@ function woo_cart_but_count($fragments) {
     return $fragments;
 }
 
-// Alter WooCommerce Checkout Text
+// Chuyen 'Checkout' to 'Đặt hàng ngay'
 add_filter( 'gettext', function( $translated_text ) {
     if ( 'Checkout' === $translated_text ) {
         $translated_text = 'Đặt hàng ngay';
     }
     return $translated_text;
 } );
+
+
+/* Thanh Toán - Xóa - Sửa Field */
+function nz_edit_cko($fields){
+	$fields['billing']['billing_first_name']['label'] = 'Họ tên';
+	$fields['billing']['billing_first_name']['placeholder'] = 'Nhập họ tên quý khách';
+	$fields['billing']['billing_email']['label'] = 'Email';
+	$fields['billing']['billing_email']['placeholder'] = 'Địa chỉ Email';
+	$fields['billing']['billing_phone']['label'] = 'Số điện thoại';
+	$fields['billing']['billing_phone']['placeholder'] = 'Nhập số điện thoại';
+	$fields['billing']['billing_address_1']['label'] = 'Địa chỉ nhận hàng';
+	$fields['billing']['billing_address_1']['placeholder'] = 'Số nhà - Quận/Huyện - Thành phố...';
+	$fields['order']['order_comments']['label'] = 'Ghi chú thêm về đơn hàng';
+	$fields['order']['order_comments']['placeholder'] = 'Ví dụ thời gian giao hàng, địa chỉ giao hàng, gọi trước khi giao...';
+    unset($fields['billing']['billing_last_name']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_postcode']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_city']);
+    return $fields;
+}
+add_filter('woocommerce_checkout_fields','nz_edit_cko');
 
 ?>

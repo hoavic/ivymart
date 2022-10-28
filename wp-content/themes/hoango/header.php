@@ -58,6 +58,7 @@
 						<button type="submit" id="searchsubmit">
 							<span class="dashicons dashicons-search"></span>
 						</button>
+						<input type="hidden" name="post_type" value="product">
 					</div>
 					</form>
 				</div>
@@ -105,7 +106,7 @@
 				</svg>
 				<?php esc_html_e( 'MENU', 'hoango' ); ?>
 			</button>
-			<button class="search-toggle" aria-controls="search-form" aria-expanded="false">
+			<button id="sBtn" class="search-toggle" aria-controls="search-form" aria-expanded="false">
 			<svg width="25" height="25" viewBox="0 0 16 16"> 
 				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
 		 	</svg>
@@ -144,6 +145,17 @@
 			woocommerce_breadcrumb( '', );
 			echo '</div>';
 		}
+
+		echo '<div id="msearch" class="mobile_search wrapper">
+				<form role="search" method="get" class="searchform" action="'.home_url( '/' ).'" >
+					<label class="screen-reader-text" for="s">Tìm kiếm cho</label>
+					<input type="text" placeholder="Nhập tên sản phẩm..." value="'.get_search_query().'" name="s" id="s" />
+					<button type="submit" id="searchsubmit">
+						<span class="dashicons dashicons-search"></span>
+					</button>
+					<input type="hidden" name="post_type" value="product">
+				</form>
+			</div>';
 
 		if (is_home()) {
 
@@ -207,4 +219,22 @@
 		}
 		
 	?>
-	<div class="wrapper <?php if(!is_home() && !is_tax('product_cat') && !is_page('cua-hang') && !is_page('cart') && !is_page('sale')) {echo 'has-sidebar';} ?>">
+
+	<?php 
+		$add_class = '';
+
+		if( !is_home() 
+			&& !is_tax('product_cat') 
+			&& !is_shop()
+			&& !is_page('cart') 
+			&& !is_page('sale')
+			&& !is_404()
+			&& !is_search()
+			&& !is_checkout()
+			) {
+
+			$add_class= ' has-sidebar';
+		} 
+
+		echo '<div class="wrapper '.$add_class.'">';
+	?>

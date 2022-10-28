@@ -87,6 +87,9 @@ $main-spacing: 15px;
         
         span {
             display: inline-block;
+            &.hotline {
+                margin-bottom: 0;
+            }
         }
     }
     .sidebar-footer {

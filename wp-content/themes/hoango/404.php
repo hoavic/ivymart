@@ -10,24 +10,26 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main site-boxed">
 
 		<section class="error-404 not-found">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hoango' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Ối! Không thể tìm thấy trang đó.', 'hoango' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'hoango' ); ?></p>
+				<p><?php esc_html_e( 'Có vẻ như đường link sản phẩm này không còn tồn tại. Bạn có thể thử một trong các liên kết bên dưới hoặc dùng công cụ tìm kiếm?', 'hoango' ); ?></p>
 
 					<?php
 					get_search_form();
+
+					echo do_shortcode('[recent_products columns="5" limit="10"]');
 
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'hoango' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Chuyên mục bài viết', 'hoango' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories(
@@ -42,14 +44,6 @@ get_header();
 							?>
 						</ul>
 					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$hoango_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'hoango' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$hoango_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
