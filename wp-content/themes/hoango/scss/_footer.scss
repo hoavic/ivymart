@@ -1,22 +1,22 @@
-$footer-bg : #183544;
-$footer-color: #bfbfbf;
-$footer-heading-color: #fff;
-$main-spacing: 15px;
+@use 'mixins' as m;
+
+$footer-bg : #fff;
+$footer-color: #333;
+$footer-heading-color: #000;
 
 .site-footer {
     background: $footer-bg;
     color: $footer-color;
-    margin-top: $main-spacing;
+    margin-top: m.$main-spacing;
 }
-
+.footer-wrap {
+    background: rgba(111,126,13,.1);
+}
 .site-info {
     text-align: center;
-    color: #f1f1f1;
     font-size: 16px;
     margin: 0 0 9px;
-    padding: 10px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #999;
+    padding: m.$main-spacing;
 
     span {
         display: block;
@@ -32,15 +32,15 @@ $main-spacing: 15px;
         a {
 
             span {
-                background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-                border: 1px solid #999;
+                background: rgba(0,0,0,0) none repeat scroll 0 0;
+                border: 1px solid m.$main-color;
                 border-radius: 50%;
-                color: #999;
+                color: m.$main-color;
                 display: inline-block;
                 font-size: 25px;
                 height: 46px;
                 line-height: 44px;
-                transition: all 0.2s ease-in-out 0s;
+                transition: all .2s ease-in-out 0s;
                 vertical-align: top;
                 width: 46px;
             }
@@ -59,7 +59,7 @@ $main-spacing: 15px;
         }
 
         &:hover {
-            color: #fff;
+            color: m.$main-color;
         }
     }
 
@@ -74,7 +74,7 @@ $main-spacing: 15px;
         padding: 0;
 
         li {
-            padding: 1px 0;
+            padding: 5px 0;
         }
     }
 }

@@ -23,16 +23,16 @@
             @include m.flex-default;
             @include m.justify-item();
 
-            background-color: #ff9d06;
+            background-color: m.$second-color;
             border-radius: 50%;
             color: #fff;
-            height: 25px;
-            padding: 3px;
+            height: 22px;
+            padding: 1px;
             font-size: 13px;
             position: absolute;
             right: 2px;
-            top: 15px;
-            width: 25px;
+            top: 9px;
+            width: 22px;
         }
     }
 }
@@ -411,6 +411,9 @@ table.variations {
         margin-top: 0;
     }
 }
+.related.products.more {
+    margin-bottom: 0;
+} 
 
 .woocommerce-tabs.wc-tabs-wrapper {
 
@@ -463,6 +466,11 @@ table.variations {
     }
     .button {
         margin-top: 10px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        display: block;
+        line-height: 25px;
     }
 }
 

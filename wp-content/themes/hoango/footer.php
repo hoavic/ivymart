@@ -12,30 +12,34 @@
 ?>
 	</div>
 	<footer id="colophon" class="site-footer">
-		<div class="wrapper">
-			<div class="site-info">
-				
-				<?php
-				
-				$option = get_option('hoango_theme_options');
+		<div class="footer-wrap">
+			<div class="wrapper">
+				<div class="site-info">
+					
+					<?php
+					
+					$option = get_option('hoango_theme_options');
 
-				//var_dump(get_option('hoango_theme_options'));
+					//var_dump(get_option('hoango_theme_options'));
 
-				echo '<div>
-						<span>Giao hàng và thu tiền tận nơi toàn quốc.</span>
-						<span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span>
+					echo '<div>
+							<span>Giao hàng và thu tiền tận nơi toàn quốc.</span>
+							<span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span>
+						</div>';
+
+					echo '<div class="social-footer">
+						<a href="'.$option['facebook'].'"><span class="dashicons dashicons-facebook"></span></a>
+						<a href="#"><span class="dashicons dashicons-instagram"></span></a>
+						<a href="#"><span class="dashicons dashicons-youtube"></span></a>
 					</div>';
 
-				echo '<div class="social-footer">
-					<a href="'.$option['facebook'].'"><span class="dashicons dashicons-facebook"></span></a>
-					<a href="#"><span class="dashicons dashicons-instagram"></span></a>
-					<a href="#"><span class="dashicons dashicons-youtube"></span></a>
-				</div>';
+					?>
 
-				?>
+				</div><!-- .site-info -->
+			</div>
+		</div>
 
-			</div><!-- .site-info -->
-
+		<div class="wrapper">
 			<div class="sidebar-footer">
 				<?php 
 					echo '<section id="block-7" class="widget widget_block">
