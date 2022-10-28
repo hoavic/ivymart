@@ -23,15 +23,42 @@
 					//var_dump(get_option('hoango_theme_options'));
 
 					echo '<div>
-							<span>Giao hàng và thu tiền tận nơi toàn quốc.</span>
-							<span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span>
-						</div>';
+							<span>Giao hàng và thu tiền tận nơi toàn quốc.</span>';
+					if ($option['telephone']) {
+						echo '<span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span>';
+					} else {
+						echo '<span class="hotline">Hỗ trợ 24/7: ... </span>';
+					}
+							
+						echo '</div>';
 
-					echo '<div class="social-footer">
-						<a href="'.$option['facebook'].'"><span class="dashicons dashicons-facebook"></span></a>
-						<a href="#"><span class="dashicons dashicons-instagram"></span></a>
-						<a href="#"><span class="dashicons dashicons-youtube"></span></a>
-					</div>';
+					echo '<div class="social-footer">';
+						$facebook = '';
+						if (isset($option['facebook'])) { $facebook = $option['facebook']; } 
+						echo '<a href="'.$facebook.'" rel="nofollow" target="_blank">
+							<span class="dashicons dashicons-facebook"></span>
+						</a>';
+
+						$instagram = '#';
+						if (isset($option['instagram'])) { $instagram = $option['instagram']; } 
+						echo '<a href="'.$instagram.'" rel="nofollow" target="_blank">
+							<span class="dashicons dashicons-instagram"></span>
+						</a>';
+
+						if (isset($option['twitter'])) { 
+							$twitter = $option['twitter']; 
+							echo '<a href="'.$twitter.'" rel="nofollow" target="_blank">
+								<span class="dashicons dashicons-twitter"></span>
+							</a>';
+						} 
+
+						$youtube = '#';
+						if (isset($option['youtube'])) { $youtube = $option['youtube']; } 
+						echo '<a href="'.$youtube.'" rel="nofollow" target="_blank">
+							<span class="dashicons dashicons-youtube"></span>
+						</a>';
+						
+					echo '</div>';
 
 					?>
 

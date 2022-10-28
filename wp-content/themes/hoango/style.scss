@@ -231,8 +231,8 @@ textarea {
   line-height: 1.5;
   color: #666;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
+  border-radius: 0;
+  padding: 5px 10px;
   width: 100%;
   &:focus {
     color: #111;

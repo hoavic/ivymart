@@ -32,7 +32,6 @@ $footer-heading-color: #000;
         a {
 
             span {
-                background: rgba(0,0,0,0) none repeat scroll 0 0;
                 border: 1px solid m.$main-color;
                 border-radius: 50%;
                 color: m.$main-color;
@@ -43,6 +42,14 @@ $footer-heading-color: #000;
                 transition: all .2s ease-in-out 0s;
                 vertical-align: top;
                 width: 46px;
+            }
+
+            &:hover {
+                span {
+                    background: m.$main-color;
+                    border: 1px solid #fff;
+                    color: #fff;
+                }
             }
         }
     }

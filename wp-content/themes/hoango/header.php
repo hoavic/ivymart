@@ -106,6 +106,7 @@
 				</svg>
 				<?php esc_html_e( 'MENU', 'hoango' ); ?>
 			</button>
+		
 			<button id="sBtn" class="search-toggle" aria-controls="search-form" aria-expanded="false">
 			<svg width="25" height="25" viewBox="0 0 16 16"> 
 				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
@@ -113,7 +114,6 @@
 			</button>
 		</div>		
 		<div class="wrapper nav-wrap">
-				
 				<?php
 					echo '<ul><li class="menu-item"><a href="#"><i class="_mi _before dashicons dashicons-editor-ul" aria-hidden="true"></i> DANH MỤC SẢN PHẨM</a>';
 						wp_nav_menu(
@@ -132,7 +132,15 @@
 						)
 					);
 				?>
-
+			<button id="cBtn" class="close-toggle" aria-controls="primary-menu" onclick="closeNav()" >
+				<span class="dashicons dashicons-arrow-left-alt"></span>
+			</button>
+			<script>
+				function closeNav() {
+					const nav =  document.getElementById("site-navigation");
+					nav.classList.toggle("toggled");
+				}
+			</script>
 		</div>
 	</nav><!-- #site-navigation -->
 	<?php 

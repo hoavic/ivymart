@@ -175,6 +175,22 @@ function social_customize_register($wp_customize) {
         'settings'   => 'hoango_theme_options[facebook]',
     ));
 
+        //  =============================
+    //  = Instagram           =
+    //  =============================
+    $wp_customize->add_setting('hoango_theme_options[instagram]', array(
+        'default'        => '',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+
+    ));
+
+    $wp_customize->add_control('hoango_instagram', array(
+        'label'      => __('Instagram', 'hoango'),
+        'section'    => 'hoango_social_info',
+        'settings'   => 'hoango_theme_options[instagram]',
+    ));
+
 	//  =============================
     //  = Twitter            =
     //  =============================
