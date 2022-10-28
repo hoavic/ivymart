@@ -89,8 +89,8 @@ $footer-heading-color: #000;
 @media only screen and (min-width: 628px) {
     .site-info {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include m.justify-item(space-between);
+        @include m.align-items;
         
         span {
             display: inline-block;
@@ -101,7 +101,7 @@ $footer-heading-color: #000;
     }
     .sidebar-footer {
         display: flex;
-        justify-content: space-between;
+        @include m.justify-item(space-between);
         .widget {
             background:none;
             padding: 0;

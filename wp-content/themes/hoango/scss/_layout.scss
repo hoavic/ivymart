@@ -23,7 +23,7 @@
 }
 
 .search-form {
-    display: flex;
+    @include m.flex-default;
     margin: 15px 0;
 }
 
@@ -44,7 +44,7 @@
     }
 
     .searchform {
-        display: flex;
+        @include m.flex-default;
         input {
             width: 100%;
         }

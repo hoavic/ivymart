@@ -40,3 +40,15 @@ $color-price: #9e7c0e;
             box-sizing: $value;
 }
 
+@mixin translateX($value) {
+    -webkit-transform: translateX($value);
+        -ms-transform: translateX($value);
+            transform: translateX($value);
+}
+
+@mixin align-items {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+

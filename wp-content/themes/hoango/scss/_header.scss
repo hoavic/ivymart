@@ -16,7 +16,7 @@
     margin: 0;
     a {
         text-decoration: none;
-        display: flex;
+        @include m.flex-default;
 
         img {
             height: 50px;
@@ -24,15 +24,15 @@
     }
 }
 .right-header {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+    @include m.flex-default;
+    @include m.justify-item(right);
+    @include m.align-items;
 }
 
 .widget_search {
     display: none;
         .searchform {
-        display: flex;
+        @include m.flex-default;
         position: relative;
         input {
             background: #f6f6f6;
@@ -72,7 +72,7 @@
 }
 
 .widget_hotline {
-    display: flex;
+    @include m.flex-default;
 
 
     .dashicons {
@@ -97,27 +97,27 @@
         transition: 300ms ease-in-out;
     }
     .swiper-button-prev, .swiper-rtl .swiper-button-next {
-        transform: translateX(-60px);
+        @include m.translateX(-60px);
     }
     .swiper-button-next, .swiper-rtl .swiper-button-prev {
-        transform: translateX(60px);
+        @include m.translateX(60px);
     }
     .swiper-pagination-bullet-active {
         background-color: m.$second-color;
     }
 
     img {
-        display: flex;
+        @include m.flex-default;
     }
 }
 
 .home-slider:hover {
     .swiper-button-prev, .swiper-rtl .swiper-button-next,
     .swiper-button-next, .swiper-rtl .swiper-button-prev {
-        transform: translateX(0);
+        @include m.translateX(0);
     }
-    
 }
+
 @media only screen and (min-width: 628px) {
     .site-title {
         padding: 10px 0;
@@ -133,9 +133,8 @@
     .widget_hotline {
 
         .callme {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+            @include m.flex-column;
+            @include m.align-items;
             p {
                 
                 margin: 0;
