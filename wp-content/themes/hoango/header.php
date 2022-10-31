@@ -64,25 +64,25 @@
 				</div>
 
 				<div class="widget_hotline">
-					<span class="dashicons dashicons-phone"></span>
-					<div class="callme">
+					
 
 					<?php 
 						$options = get_option('hoango_theme_options');
+						
 						if (!empty($options['telephone'])) {
-							echo '<p><a href="tel:'.$options['telephone'].'">Tel: <span>'.$options['telephone'].'</span></a></p>';
+							echo '<a href="tel:'.$options['telephone'].'" rel="nofollow"><span class="dashicons dashicons-phone"></span></a>
+								<div class="callme">';
+								echo '<p><a href="tel:'.$options['telephone'].'">Tel: <span>'.$options['telephone'].'</span></a></p>';
+							echo '</div>';
 						}
-						if (!empty($options['hotline'])) {
+/* 						if (!empty($options['hotline'])) {
 							echo '<p><a href="tel:'.$options['hotline'].'">Hotline: <span class="hotline">'.$options['hotline'].'</span></a></p>';
-						}
+						} */
+						
 					?>
 						
 						
-					</div>
-					<?php 
-						get_option('hoango_theme_options');
-
-					?>
+					
 				</div>
 				
 				<div class="widget_shopping_cart_icon">
@@ -233,6 +233,7 @@
 
 		if( !is_home() 
 			&& !is_tax('product_cat') 
+			&& !is_tax('thuong_hieu') 
 			&& !is_shop()
 			&& !is_page('cart') 
 			&& !is_page('sale')

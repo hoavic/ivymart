@@ -38,8 +38,14 @@ function remove_dashboard_widgets () {
     remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
     remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
     remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
-
+    remove_meta_box( 'themeisle', 'dashboard', 'normal' );
+    remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'normal' );
 }
+
+/** REmove welcome panel */
+add_action('admin_init', function() {
+    remove_action('welcome_panel', 'wp_welcome_panel');
+});
 
 /* Disable WordPress Admin Bar for all users */
 add_filter( 'show_admin_bar', '__return_false' );
@@ -62,10 +68,27 @@ function control_menu_items_shown() {
 } */
 
 /** Remove Sitehealth link in sub-menu */
-add_action( 'admin_menu', 'remove_site_health_submenu' );
-function remove_site_health_submenu() {
+add_action( 'admin_menu', 'remove_menu_and_submenu', 999 );
+function remove_menu_and_submenu() {
     remove_submenu_page( 'tools.php', 'site-health.php' );
+    remove_submenu_page('woocommerce', 'ua-quanity-plus-minus-button');
+    remove_submenu_page('woocommerce', 'wc-admin');
+    remove_submenu_page('woocommerce', 'wc-admin&path=/customers');
+    remove_submenu_page('woocommerce', 'wc-status');
+    remove_submenu_page('woocommerce', 'wc-addons');
+    remove_menu_page( 'plugins.php' );
+    remove_menu_page( 'ultraaddons' );
+    remove_menu_page('getwooplugins');
+
 }
+
+/** Show menu init */
+/* add_action( 'admin_init', 'check_debug_admin_menu' );
+
+function check_debug_admin_menu() {
+
+    echo '<pre>' . print_r( $GLOBALS[ 'submenu' ], TRUE) . '</pre>';
+} */
 
 /* Disable automatic WordPress plugin updates: */
 /* add_filter( 'auto_update_plugin', '__return_false' ); */
@@ -158,5 +181,14 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+/** Remove admin notices */
+add_action('in_admin_header', function () {
+    remove_all_actions('admin_notices');
+    remove_all_actions('all_admin_notices');
+/*     add_action('admin_notices', function () {
+      echo '<p>Chào mừng bạn đến với trang quản trị Ivy Mart!</p>';
+    }); */
+  }, 1000);
 
 ?>

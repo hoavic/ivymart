@@ -25,9 +25,9 @@
 					echo '<div>
 							<span>Giao hàng và thu tiền tận nơi toàn quốc.</span>';
 					if ($option['telephone']) {
-						echo '<span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span>';
+						echo '<a href="tel:'.$option['telephone'].'" rel="nofollow"><span class="hotline">Hỗ trợ 24/7: '.$option['telephone'].'</span></a>';
 					} else {
-						echo '<span class="hotline">Hỗ trợ 24/7: ... </span>';
+						echo '<span class="hotline">Hỗ trợ 24/7: </span>';
 					}
 							
 						echo '</div>';
@@ -79,12 +79,12 @@
 											echo '<li><span class="dashicons dashicons-building"></span> '.$option["address"].'</li>';
 										}
 										if (!empty($option['telephone'])) {
-											echo '<li><span class="dashicons dashicons-smartphone"></span> <a href="tel:'.$option['telephone'].'">'.$option['telephone'].'</a></li>';
+											echo '<li><span class="dashicons dashicons-smartphone"></span> <a href="tel:'.$option['telephone'].'" rel="nofollow">'.$option['telephone'].'</a></li>';
 										}	
-										if (!empty($option['hotline'])) {
-											echo '<li><span class="dashicons dashicons-smartphone"></span> <a href="tel:'.$option['hotline'].'">'.$option['hotline'].'</a></li>';
+										if (!empty($option['email'])) {
+											echo '<li><span class="dashicons dashicons-email"></span> <a href="tel:'.$option['email'].'" rel="nofollow">'.$option['email'].'</a></li>';
 										}		
-										echo '<li><span class="dashicons dashicons-clock"></span> Thứ 2-6: 8h - 20h; Thứ 7-CN: 9h - 17h</li>
+										echo '<li><span class="dashicons dashicons-clock"></span> Thời gian làm việc 9h - 18h hàng ngày</li>
 									</ul>
 								</div>
 							</div>

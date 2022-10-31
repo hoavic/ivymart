@@ -295,4 +295,7 @@ function nz_edit_cko($fields){
 }
 add_filter('woocommerce_checkout_fields','nz_edit_cko');
 
+// Disable Woocommerce bloat
+add_filter( 'woocommerce_admin_disabled', '__return_true' );
+
 ?>

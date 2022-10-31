@@ -1,0 +1,12 @@
+2022-10-31T08:15:11+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_submenu_page(), 1 passed in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-origin.php on line 74 and exactly 2 expected in D:\laragon\www\ivymart\wp-admin\includes\plugin.php:1806
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-origin.php(74): remove_submenu_page('ua-quanity-plus...')
+#1 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(307): remove_menu_and_submenu('')
+#2 D:\laragon\www\ivymart\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#3 D:\laragon\www\ivymart\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 D:\laragon\www\ivymart\wp-admin\includes\menu.php(155): do_action('admin_menu', '')
+#5 D:\laragon\www\ivymart\wp-admin\menu.php(394): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\wp-admin\admin.php(158): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-admin\includes\plugin.php on line 1806
+

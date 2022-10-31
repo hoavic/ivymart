@@ -28,6 +28,7 @@ function create_subjects_hierarchical_taxonomy() {
   register_taxonomy('thuong_hieu',array('product'), array(
     'hierarchical' => true,
     'labels' => $labels,
+
     'show_ui' => true,
     'show_in_rest' => true,
     'show_admin_column' => false,

@@ -133,8 +133,8 @@
     .widget_hotline {
 
         .callme {
-            @include m.flex-column;
-            @include m.align-items;
+            @include m.flex-default;
+            margin: auto;
             p {
                 
                 margin: 0;

@@ -111,7 +111,7 @@ function contact_customize_register($wp_customize){
         'settings'   => 'hoango_theme_options[telephone]',
     ));
 
-    	//  =============================
+/*     	//  =============================
     //  = Hotline               =
     //  =============================
     $wp_customize->add_setting('hoango_theme_options[hotline]', array(
@@ -125,7 +125,7 @@ function contact_customize_register($wp_customize){
         'label'      => __('Hotline', 'hoango'),
         'section'    => 'hoango_contact_info',
         'settings'   => 'hoango_theme_options[hotline]',
-    ));
+    )); */
 
 	//  =============================
     //  = Email             =
