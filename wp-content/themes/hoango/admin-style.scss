@@ -1,7 +1,7 @@
 /* 
 * Admin Styles 
 */
-$logo_url: "img/logo-ivy-square.png";
+$logo_url: "img/logo-ivy-chuan-square.png";
 
 #customize-controls .customize-info .customize-help-toggle {
     display: none;
@@ -26,5 +26,14 @@ a.edit-post-fullscreen-mode-close.components-button {
 }
 
 .form-field.term-description-wrap>p {
+    display: none;
+}
+
+
+div#whl_settings {
+    display: none;
+}
+
+div#whl_settings + table {
     display: none;
 }

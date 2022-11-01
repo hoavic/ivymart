@@ -4,7 +4,15 @@
 /**  */
 add_action( 'login_enqueue_scripts', 'hoango_login_logo' );
 function hoango_login_logo() { 
-    $logo_link = get_template_directory_uri() . '/img/logo-ivy-hori.png';
+
+    if ( has_custom_logo() ) {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        $logo_link = $logo_arr[0];
+    } else {
+        $logo_link = get_template_directory_uri() . '/img/logo-ivy-chuan-hori.png';
+    }
+
     ?>
     <style type="text/css">
         .login {

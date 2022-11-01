@@ -21,7 +21,14 @@ get_header();
 				<p><?php esc_html_e( 'Có vẻ như đường link sản phẩm này không còn tồn tại. Bạn có thể thử một trong các liên kết bên dưới hoặc dùng công cụ tìm kiếm?', 'hoango' ); ?></p>
 
 					<?php
-					get_search_form();
+						echo '<form role="search" method="get" class="searchform" action="'.home_url( '/' ).'" >
+								<label class="screen-reader-text" for="s">Tìm kiếm cho</label>
+								<input type="text" placeholder="Nhập tên sản phẩm..." value="'.get_search_query().'" name="s" id="s" />
+								<button type="submit" id="searchsubmit">
+									<span class="dashicons dashicons-search"></span>
+								</button>
+								<input type="hidden" name="post_type" value="product">
+							</form>';
 
 					echo do_shortcode('[recent_products columns="5" limit="10"]');
 

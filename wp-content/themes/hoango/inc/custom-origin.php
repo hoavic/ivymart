@@ -54,18 +54,18 @@ add_filter( 'show_admin_bar', '__return_false' );
 /**
  * Hide Helplink
  */
-/* add_filter('contextual_help_list','contextual_help_list_remove');
+add_filter('contextual_help_list','contextual_help_list_remove');
 
 function contextual_help_list_remove(){
     global $current_screen;
     $current_screen->remove_help_tabs();
-} */
+}
 
 /** Remove update link in sub-menu */
-/* add_action( 'admin_menu', 'control_menu_items_shown' );
+add_action( 'admin_menu', 'control_menu_items_shown' );
 function control_menu_items_shown() {
     remove_submenu_page( 'index.php', 'update-core.php' );
-} */
+}
 
 /** Remove Sitehealth link in sub-menu */
 add_action( 'admin_menu', 'remove_menu_and_submenu', 999 );
@@ -76,6 +76,9 @@ function remove_menu_and_submenu() {
     remove_submenu_page('woocommerce', 'wc-admin&path=/customers');
     remove_submenu_page('woocommerce', 'wc-status');
     remove_submenu_page('woocommerce', 'wc-addons');
+    remove_submenu_page( 'options-general.php', 'whl_settings' );
+    remove_submenu_page( 'options-general.php', 'limit-login-attempts' );
+    remove_menu_page( 'limit-login-attempts' );
     remove_menu_page( 'plugins.php' );
     remove_menu_page( 'ultraaddons' );
     remove_menu_page('getwooplugins');
@@ -91,10 +94,10 @@ function check_debug_admin_menu() {
 } */
 
 /* Disable automatic WordPress plugin updates: */
-/* add_filter( 'auto_update_plugin', '__return_false' ); */
+add_filter( 'auto_update_plugin', '__return_false' );
 
 /* Disable automatic WordPress theme updates: */
-/* add_filter( 'auto_update_theme', '__return_false' );
+add_filter( 'auto_update_theme', '__return_false' );
 
 // Disable core update emails
 add_filter( 'auto_core_update_send_email', '__return_false' );
@@ -103,7 +106,7 @@ add_filter( 'auto_core_update_send_email', '__return_false' );
 add_filter( 'auto_plugin_update_send_email', '__return_false' );
 
 // Disable theme update emails
-add_filter( 'auto_theme_update_send_email', '__return_false' ); */
+add_filter( 'auto_theme_update_send_email', '__return_false' );
 
 // hide update notifications
 /* function remove_core_updates(){
@@ -123,12 +126,12 @@ add_filter('pre_site_transient_update_themes','remove_core_updates'); //hide upd
 add_action('admin_menu','kinsta_hide_update_nag'); */
 
 // Change footer-thankyou
-/* function change_footer_admin () 
+function change_footer_admin () 
 {
     echo '<span id="footer-thankyou">Thiết kế bởi <strong>Hòa Ngô</strong>';
 }
  
-add_filter('admin_footer_text', 'change_footer_admin'); */
+add_filter('admin_footer_text', 'change_footer_admin');
 
 // Change footer-thankyou
 /* function hoango_hide_footer_vesion() {

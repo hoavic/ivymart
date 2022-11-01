@@ -82,7 +82,7 @@
 											echo '<li><span class="dashicons dashicons-smartphone"></span> <a href="tel:'.$option['telephone'].'" rel="nofollow">'.$option['telephone'].'</a></li>';
 										}	
 										if (!empty($option['email'])) {
-											echo '<li><span class="dashicons dashicons-email"></span> <a href="tel:'.$option['email'].'" rel="nofollow">'.$option['email'].'</a></li>';
+											echo '<li><span class="dashicons dashicons-email"></span> <a href="mailto:'.$option['email'].'" rel="nofollow">'.$option['email'].'</a></li>';
 										}		
 										echo '<li><span class="dashicons dashicons-clock"></span> Thời gian làm việc 9h - 18h hàng ngày</li>
 									</ul>
