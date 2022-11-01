@@ -402,7 +402,13 @@ a.button.wc-backward {
         }
     }
 }
-
+#tab-description {
+    h2:first-child {
+        font-size: 1.375em;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+} 
 .related.products {
     background: #fff;
     padding: m.$main-spacing;

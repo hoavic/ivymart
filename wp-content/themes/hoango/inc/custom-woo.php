@@ -198,7 +198,7 @@ function woo_rename_tabs( $tabs ) {
 /**
  * Remove "Description" Heading Title @ WooCommerce Single Product Tabs
  */
-add_filter( 'woocommerce_product_description_heading', '__return_null' );
+add_filter( 'woocommerce_product_description_heading', function() {return 'MÔ TẢ SẢN PHẨM';} );
 
 
 /** Chuyen 0 đ thành Lien he */
@@ -298,4 +298,15 @@ add_filter('woocommerce_checkout_fields','nz_edit_cko');
 // Disable Woocommerce bloat
 add_filter( 'woocommerce_admin_disabled', '__return_true' );
 
+/** Change time format woo */
+add_filter( 'post_date_column_time' ,'woo_custom_post_date_column_time_withDate' );
+function woo_custom_post_date_column_time_withDate( $post ) {
+$t_time = get_the_time( __( 'd/m/Y g:i:s A', 'woocommerce' ), $post );
+return $t_time;
+}
+add_filter( 'post_date_column_time' , 'woo_custom_post_date_column_time' );
+function woo_custom_post_date_column_time( $post ) {
+    $h_time = get_the_time( __( 'd/m/Y', 'woocommerce' ), $post );
+    return $h_time;
+}
 ?>

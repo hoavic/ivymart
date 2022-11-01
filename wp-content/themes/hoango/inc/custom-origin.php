@@ -134,11 +134,11 @@ function change_footer_admin ()
 add_filter('admin_footer_text', 'change_footer_admin');
 
 // Change footer-thankyou
-/* function hoango_hide_footer_vesion() {
+function hoango_hide_footer_vesion() {
     remove_filter( 'update_footer', 'core_update_footer' ); 
 }
 
-add_action( 'admin_menu', 'hoango_hide_footer_vesion' ); */
+add_action( 'admin_menu', 'hoango_hide_footer_vesion' );
 
 /** Remove Archive in archive page */
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

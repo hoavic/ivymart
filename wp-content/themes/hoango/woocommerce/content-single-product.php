@@ -62,13 +62,13 @@ if ( post_password_required() ) {
 			woocommerce_template_single_title();
 			woocommerce_template_single_price();
 			if ( ! has_excerpt() ) {
-				echo '<div class="woocommerce-product-details__short-description">
+/* 				echo '<div class="woocommerce-product-details__short-description">
 						<ul>
 							<li>Nội dung phần mô tả ngắn 1</li>
 							<li>Nội dung phần mô tả ngắn 2</li>
 							<li>Nội dung phần mô tả ngắn 3</li>
 						</ul>
-					</div>';
+					</div>'; */
 			} else {
 				woocommerce_template_single_excerpt();
 			}
