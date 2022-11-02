@@ -82,15 +82,15 @@ a {
     color: $link-color;
   }
   &:hover {
-    color: $link-active-color;
+    color: $link-color;
     outline: 0;
   }
   &:focus {
-    color: $link-active-color;
+    color: $link-color;
     outline: thin dotted;
   }
   &:active {
-    color: $link-active-color;
+    color: $link-color;
     outline: 0;
   }
 }

@@ -34,7 +34,7 @@
 
 				if ( has_custom_logo() ) {
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
-					$logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					$logo_arr = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
 					$logo = '<img src="' . esc_url( $logo_arr[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
 				}
 

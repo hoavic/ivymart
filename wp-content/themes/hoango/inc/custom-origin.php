@@ -79,6 +79,8 @@ function remove_menu_and_submenu() {
     remove_submenu_page( 'options-general.php', 'whl_settings' );
     remove_submenu_page( 'options-general.php', 'limit-login-attempts' );
     remove_submenu_page( 'options-general.php', 'rlrsssl_really_simple_ssl' );
+    remove_submenu_page( 'options-general.php', 'autoptimize' );
+    remove_submenu_page( 'options-general.php', 'litespeed-cache-options' );
     remove_menu_page( 'litespeed' );
     remove_menu_page( 'wpseo_dashboard' );
     remove_menu_page( 'limit-login-attempts' );
