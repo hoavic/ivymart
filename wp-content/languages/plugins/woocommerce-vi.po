@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce 7.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce\n"
 "POT-Creation-Date: 2022-10-11T15:41:48+00:00\n"
-"PO-Revision-Date: 2022-11-02 10:55+0700\n"
+"PO-Revision-Date: 2022-11-02 14:12+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -44293,7 +44293,6 @@ msgstr "Thứ tự theo giá: cao xuống thấp"
 #: packages/woocommerce-blocks/assets/js/blocks/reviews/all-reviews/index.js:23
 #: packages/woocommerce-blocks/assets/js/blocks/reviews/all-reviews/no-reviews-placeholder.js:18
 #: packages/woocommerce-blocks/build/all-reviews.js:9
-#, fuzzy
 msgid "All Reviews"
 msgstr "Tất cả Đánh giá"
 

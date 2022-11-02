@@ -78,6 +78,9 @@ function remove_menu_and_submenu() {
     remove_submenu_page('woocommerce', 'wc-addons');
     remove_submenu_page( 'options-general.php', 'whl_settings' );
     remove_submenu_page( 'options-general.php', 'limit-login-attempts' );
+    remove_submenu_page( 'options-general.php', 'rlrsssl_really_simple_ssl' );
+    remove_menu_page( 'litespeed' );
+    remove_menu_page( 'wpseo_dashboard' );
     remove_menu_page( 'limit-login-attempts' );
     remove_menu_page( 'plugins.php' );
     remove_menu_page( 'ultraaddons' );
@@ -109,14 +112,14 @@ add_filter( 'auto_plugin_update_send_email', '__return_false' );
 add_filter( 'auto_theme_update_send_email', '__return_false' );
 
 // hide update notifications
-/* function remove_core_updates(){
+function remove_core_updates(){
 
     global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
 
 }
 add_filter('pre_site_transient_update_core','remove_core_updates'); //hide updates for WordPress itself
 add_filter('pre_site_transient_update_plugins','remove_core_updates'); //hide updates for all plugins
-add_filter('pre_site_transient_update_themes','remove_core_updates'); //hide updates for all themes */
+add_filter('pre_site_transient_update_themes','remove_core_updates'); //hide updates for all themes
 
 // Hide dashboard update notifications for all users
 /* function kinsta_hide_update_nag() {

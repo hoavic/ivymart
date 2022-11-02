@@ -762,6 +762,8 @@ ul.wc-item-meta {
     padding: 15px;
     background: #6f7e0d12;
     border-radius: 10px;
+
+    ul {list-style: none;}
 }
 
 table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details.shop_custom_table {
