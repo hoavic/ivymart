@@ -72,21 +72,23 @@ if ( post_password_required() ) {
 			} else {
 				woocommerce_template_single_excerpt();
 			}
-			
-			woocommerce_template_single_add_to_cart();
-			//woocommerce_template_loop_add_to_cart();
-			$current_product_id = get_the_ID();
-
-			$product = wc_get_product( $current_product_id );
-			
-			$cart_url = wc_get_cart_url();
-			echo '<p class="action buttons">';
-			if( $product->is_type( 'simple' ) ){
-			echo '<a href="'.$cart_url.'?add-to-cart='.$current_product_id.'" class="buy-now button">
-					<b>Mua Ngay</b>
-					<span>Giao hàng thu tiền tận nơi toàn quốc</span>
-				</a>';
+			if ( $product->is_in_stock() && $product->get_price() != 0 ) {
+				woocommerce_template_single_add_to_cart();
+				//woocommerce_template_loop_add_to_cart();
+				$current_product_id = get_the_ID();
+	
+				$product = wc_get_product( $current_product_id );
+				
+				$cart_url = wc_get_cart_url();
+				echo '<p class="action buttons">';
+				if( $product->is_type( 'simple' ) ){
+				echo '<a href="'.$cart_url.'?add-to-cart='.$current_product_id.'" class="buy-now button">
+						<b>Mua Ngay</b>
+						<span>Giao hàng thu tiền tận nơi toàn quốc</span>
+					</a>';
+				}
 			}
+
 			$options = get_option('hoango_theme_options');
 			echo '<a class="buy-now callorder" href="tel:'.$options["telephone"].'">
 					<b>Gọi điện đặt hàng</b>

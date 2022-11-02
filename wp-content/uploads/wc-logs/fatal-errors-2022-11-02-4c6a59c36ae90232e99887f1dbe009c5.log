@@ -11,3 +11,27 @@ Stack trace:
 
 2022-11-02T03:48:08+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN), expecting ';' in D:\laragon\www\ivymart\wp-content\themes\hoango\inc\custom-woo.php on line 152
 
+2022-11-02T08:43:07+00:00 CRITICAL Uncaught Error: Call to undefined function debug_filters() in D:\laragon\www\ivymart\wp-content\themes\hoango\header.php:32
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\template.php(770): require_once()
+#1 D:\laragon\www\ivymart\wp-includes\template.php(716): load_template('D:\\laragon\\www\\...', true, Array)
+#2 D:\laragon\www\ivymart\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 D:\laragon\www\ivymart\wp-content\themes\hoango\woocommerce\single-product.php(22): get_header('shop')
+#4 D:\laragon\www\ivymart\wp-includes\template-loader.php(106): include('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(19): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\header.php on line 32
+
+2022-11-02T08:45:54+00:00 CRITICAL Uncaught Error: Call to undefined function debug_filters() in D:\laragon\www\ivymart\wp-content\themes\hoango\header.php:32
+Stack trace:
+#0 D:\laragon\www\ivymart\wp-includes\template.php(770): require_once()
+#1 D:\laragon\www\ivymart\wp-includes\template.php(716): load_template('D:\\laragon\\www\\...', true, Array)
+#2 D:\laragon\www\ivymart\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 D:\laragon\www\ivymart\wp-content\themes\hoango\woocommerce\single-product.php(22): get_header('shop')
+#4 D:\laragon\www\ivymart\wp-includes\template-loader.php(106): include('D:\\laragon\\www\\...')
+#5 D:\laragon\www\ivymart\wp-blog-header.php(19): require_once('D:\\laragon\\www\\...')
+#6 D:\laragon\www\ivymart\index.php(17): require('D:\\laragon\\www\\...')
+#7 {main}
+  thrown in D:\laragon\www\ivymart\wp-content\themes\hoango\header.php on line 32
+

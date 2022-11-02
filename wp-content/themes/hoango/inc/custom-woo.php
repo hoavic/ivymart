@@ -2,7 +2,7 @@
 
 function mytheme_add_woocommerce_support() {
     add_theme_support( 'woocommerce' );
-    add_theme_support( 'wc-product-gallery-zoom' );
+    //add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 }
@@ -80,9 +80,9 @@ function hoangweb_wc_custom_get_price_html( $price, $product ) {
         if ( $product->is_on_sale() && $product->get_regular_price() ) {
             $regular_price = wc_get_price_to_display( $product, array( 'qty' => 1, 'price' => $product->get_regular_price() ) );
  
-            $price = wc_format_price_range( $regular_price, __( 'Free!', 'woocommerce' ) );
+            $price = wc_format_price_range( $regular_price, __( 'MIỄN PHÍ!', 'woocommerce' ) );
         } else {
-            $price = '' . __( 'Liên hệ', 'woocommerce' ) . '';
+            $price = '' . __( 'LIÊN HỆ', 'woocommerce' ) . '';
         }
     }
     return $price;
@@ -223,22 +223,6 @@ function woo_rename_tabs( $tabs ) {
 add_filter( 'woocommerce_product_description_heading', function() {return 'MÔ TẢ SẢN PHẨM';} );
 
 
-/** Chuyen 0 đ thành Lien he */
-function devvn_wc_custom_get_price_html( $price, $product ) {
-    if ( $product->get_price() == 0 ) {
-        if ( $product->is_on_sale() && $product->get_regular_price() ) {
-            $regular_price = wc_get_price_to_display( $product, array( 'qty' => 1, 'price' => $product->get_regular_price() ) );
- 
-            $price = wc_format_price_range( $regular_price, __( 'Free!', 'woocommerce' ) );
-        } else {
-            $price = '<span class="amount">' . __( 'Liên hệ', 'woocommerce' ) . '</span>';
-        }
-    }
-    return $price;
-}
-add_filter( 'woocommerce_get_price_html', 'devvn_wc_custom_get_price_html', 10, 2 );
-
-
 function woo_cart_but() {
     ob_start();
     $cart_count = WC()
@@ -332,4 +316,55 @@ function woo_custom_post_date_column_time( $post ) {
     $h_time = get_the_time( __( 'd/m/Y', 'woocommerce' ), $post );
     return $h_time;
 }
+
+/**
+
+ *    Khi het hàng -> hiển thị TẠM HẾT HÀNG!
+
+ */
+
+add_filter( 'woocommerce_variable_sale_price_html', 'theanand_remove_prices', 10, 2 );
+
+add_filter( 'woocommerce_variable_price_html', 'theanand_remove_prices', 10, 2 );
+
+add_filter( 'woocommerce_get_price_html', 'theanand_remove_prices', 10, 2 );
+
+function theanand_remove_prices( $price, $product ) {
+
+    if ( ! $product->is_in_stock()) {
+
+    $price = 'TẠM HẾT HÀNG!';
+
+    }
+
+    return $price;
+
+}
+
+
+/** Hiện % giảm giá  */
+function woocommerce_custom_sale_savings() {
+    global $product;
+    if ( ! $product->is_on_sale() ) return;
+    if ( $product->is_type( 'simple' ) ) {
+       $max_percentage = ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100;
+    } elseif ( $product->is_type( 'variable' ) ) {
+       $max_percentage = 0;
+       foreach ( $product->get_children() as $child_id ) {
+          $variation = wc_get_product( $child_id );
+          $price = $variation->get_regular_price();
+          $sale = $variation->get_sale_price();
+          if ( $price != 0 && ! empty( $sale ) ) $percentage = ( $price - $sale ) / $price * 100;
+          if ( $percentage > $max_percentage ) {
+             $max_percentage = $percentage;
+          }
+       }
+    }
+    if ( $max_percentage > 0 ) {
+      return  '<span class="onsale">-' . round($max_percentage) . '%</span>';
+    } 
+}
+ 
+ add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_savings', 10, 3);
+
 ?>

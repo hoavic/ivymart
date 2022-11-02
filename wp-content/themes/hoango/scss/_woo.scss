@@ -245,7 +245,7 @@
     background-color: #fff;
     position: relative;
     margin-bottom: m.$main-spacing;
-    .onsale {left: 10px; right: inherit;z-index: 99;}
+    .onsale {left: 20px; right: inherit;z-index: 99;}
 
     .summary {
         padding: m.$main-spacing;
@@ -419,6 +419,13 @@ section.up-sells.upsells.products {
     padding: m.$main-spacing;
     background: #fff;
     margin: m.$main-spacing 0;
+
+    > h2 {
+        font-size: 1.375em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-top: 0;
+    }
 }
 
 .cross-sells {
@@ -720,7 +727,7 @@ tr.woocommerce-cart-form__cart-item {
 .wc-proceed-to-checkout {
     .checkout-button {
         display: block;
-        background: #c70000;
+        background: m.$checkout-color;
         padding: 10px;
         text-align: center;
         color: #fff;
@@ -744,6 +751,9 @@ tr.woocommerce-cart-form__cart-item {
     padding: 15px;
     border-radius: 3px;
     text-transform: uppercase;
+    border-color: m.$checkout-color;
+    background: m.$checkout-color;
+    font-weight: bold;
 }
 ul.wc-item-meta {
     display: flex;

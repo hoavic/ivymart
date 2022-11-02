@@ -1,4 +1,5 @@
 <?php
+define( 'WP_CACHE', true );
 
 //Begin Really Simple SSL session cookie settings
 @ini_set('session.cookie_httponly', true);
@@ -18,7 +19,7 @@ if ((isset($_ENV["HTTPS"]) && ("on" == $_ENV["HTTPS"]))
 $_SERVER["HTTPS"] = "on";
 }
 //END Really Simple SSL
-define( 'WP_CACHE', true );
+
 /**
  * The base configuration for WordPress
  *
