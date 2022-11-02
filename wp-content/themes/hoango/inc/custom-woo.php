@@ -136,7 +136,29 @@ add_action('wp_enqueue_scripts', 'woo_dequeue_unused_css', 330);
 /** Đổi text Add to cart (Thêm vào giỏ hàng) -> Mua ngay */
 add_filter('woocommerce_product_single_add_to_cart_text','QL_customize_add_to_cart_button_woocommerce');
 function QL_customize_add_to_cart_button_woocommerce(){
-    return __('Thêm vào giỏ hàng', 'woocommerce');
+    global $product;
+    $product_type = $product->get_type(); // Get the Product Type
+	
+    // Change text depending on Product type
+    switch ( $product_type ) {
+        case "variable":
+            return __('Thêm vào giỏ hàng', 'woocommerce');
+            break;
+        case "grouped":
+            return __('Thêm vào giỏ hàng', 'woocommerce');
+            break;
+        case "external":
+            // Button label is added when editing the product
+            if ($product->get_button_text()) {
+                return esc_html( $product->get_button_text() );
+                break;
+            }
+            return __('Chuyển đến sản phẩm', 'woocommerce');
+            break;
+        default:
+            return __('Thêm vào giỏ hàng', 'woocommerce');
+    }
+    
 }
 
 // Change button text on WooCommerce Shop pages
@@ -304,6 +326,7 @@ function woo_custom_post_date_column_time_withDate( $post ) {
 $t_time = get_the_time( __( 'd/m/Y g:i:s A', 'woocommerce' ), $post );
 return $t_time;
 }
+
 add_filter( 'post_date_column_time' , 'woo_custom_post_date_column_time' );
 function woo_custom_post_date_column_time( $post ) {
     $h_time = get_the_time( __( 'd/m/Y', 'woocommerce' ), $post );
