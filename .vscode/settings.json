@@ -23,6 +23,8 @@
 		"browsers": [
 			"last 4 versions",
 			"ie >= 9",
+            "iOS >= 13",
+            "Safari >= 12",
 			"> 5%"
 		]
     },

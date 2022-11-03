@@ -164,14 +164,3 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'show_contact_info' ) ) :
-	/**
-	 * Shim for sites older than 5.2.
-	 *
-	 * @link https://core.trac.wordpress.org/ticket/12563
-	 */
-	function show_contact_info() {
-		echo '<p>Thon tin lien he.</p>';
-	}
-endif;
-

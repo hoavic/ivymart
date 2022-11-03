@@ -246,9 +246,7 @@ function woo_cart_but() {
 
 //Add a filter to get the cart count
 add_filter('woocommerce_add_to_cart_fragments', 'woo_cart_but_count');
-/**
- * Add AJAX Shortcode when cart contents update
- */
+
 function woo_cart_but_count($fragments) {
     ob_start();
     $cart_count = WC()
@@ -304,19 +302,6 @@ add_filter('woocommerce_checkout_fields','nz_edit_cko');
 // Disable Woocommerce bloat
 add_filter( 'woocommerce_admin_disabled', '__return_true' );
 
-/** Change time format woo */
-add_filter( 'post_date_column_time' ,'woo_custom_post_date_column_time_withDate' );
-function woo_custom_post_date_column_time_withDate( $post ) {
-$t_time = get_the_time( __( 'd/m/Y g:i:s A', 'woocommerce' ), $post );
-return $t_time;
-}
-
-add_filter( 'post_date_column_time' , 'woo_custom_post_date_column_time' );
-function woo_custom_post_date_column_time( $post ) {
-    $h_time = get_the_time( __( 'd/m/Y', 'woocommerce' ), $post );
-    return $h_time;
-}
-
 /**
 
  *    Khi het hàng -> hiển thị TẠM HẾT HÀNG!
@@ -366,5 +351,15 @@ function woocommerce_custom_sale_savings() {
 }
  
  add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_savings', 10, 3);
+
+
+ /**
+ * Disable WooCommerce block styles (front-end).
+ */
+function themesharbor_disable_woocommerce_block_styles() {
+    wp_dequeue_style( 'wc-blocks-style' );
+    wp_deregister_style('wc-blocks-style' );
+}
+add_action( 'wp_enqueue_scripts', 'themesharbor_disable_woocommerce_block_styles', 110 );
 
 ?>
