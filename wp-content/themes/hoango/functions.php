@@ -183,6 +183,11 @@ require get_template_directory() . '/inc/custom-woo.php';
 require get_template_directory() . '/inc/custom/custom-slider.php';
 
 /**
+ * Custom Cat Nav in home page
+ */
+require get_template_directory() . '/inc/custom/custom_cat_nav.php';
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
